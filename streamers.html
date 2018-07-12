@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <title>17實況主排行</title>
+    <style>
+        .block {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, rgb(255, 255, 255) , rgb(226, 226, 226));
+            position: relative;
+            height: 62px;
+            cursor: pointer;
+        }
+        .block:hover{
+            background: linear-gradient(to bottom, rgb(255, 237, 237) , rgb(252, 252, 252));
+            color: rgb(102, 30, 4);
+            font-weight: 600;
+        }
+        .block img {
+            border-radius: 30px;
+        }
+        .block .score {
+            background-color: orangered;
+            font-size: 12px;
+            color: #fff;
+            font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-radius: 10px;
+            padding: 0 3px;
+            position: absolute;
+            top: 41px;
+        }
+    </style>
+</head>
+<body>
+    <div id="list">
+        <div v-for="value in streamers" class="block">
+            <img :src="value.picture" :width="60" align="middle"/>
+            <div class="score">{{value.score}}</div>
+            {{value.openID}}
+        </div>
+    </div>
+    <script src="./streamers.js"></script>
+    <script>
+        new Vue({
+            el:'#list',
+            data: {
+            },
+            methods: {
+            }
+        });
+    </script>
+</body>
+</html>

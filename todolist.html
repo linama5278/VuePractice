@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='todolist'>
+        <h1>To Do List</h1>
+        <input type="text" v-model="inputList"/>　
+        <button @click="addList" :disabled="isEmpty">Send</button>
+        <ul>
+            <li v-for="(item, index) in list" @click="removeList(index)">{{item}}</li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#todolist',
+            data: {
+                list: [],
+                inputList: ''
+            },
+            computed: {
+                isEmpty(){
+                    return this.inputList === '';
+                }
+            },
+            methods: {
+                addList(){
+                    if (this.isEmpty){
+                        return;
+                    }
+                    this.list.push(this.inputList);
+                    this.inputList = '';
+                },
+                removeList(index){
+                    this.list.splice(index, 1);
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>
