@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='counter'>
+        <h1>{{count}}</h1>
+        <button v-on:click="resetCount">reset</button>　
+        <button v-on:click="addCount">累加</button>
+    </div>
+
+    <div id='look'>
+        <button v-on:click="toggle">toggle</button>
+        <h1 v-if="show">Hello</h1>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#counter',
+            data: {
+                count: 10,
+                i: 1
+            },
+            methods: {
+                addCount(){
+                    this.count += this.i;
+                    this.i += 1;
+                    //this.count += i;
+                },
+                resetCount(){
+                    this.count = 10;
+                }
+            },
+        });
+
+        new Vue({
+            el: '#look',
+            data: {
+                show: true, 
+            },
+            methods: {
+                toggle(){
+                    this.show = !this.show;
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

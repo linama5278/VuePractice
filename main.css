@@ -1,0 +1,52 @@
+body {
+    font-size: 12pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+header {
+    display: block;
+    width: 20%;
+    height: 100vh;
+    padding: 0;
+    background-color: #1976D2;
+    float: left;
+}
+header h2 {
+    color: #E3F2FD;
+    text-shadow: 1px 1px 5px #111111;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color :white;
+}
+a:hover {
+    text-decoration: none;
+    color: #80D8FF;
+}
+sav {
+    display: block;
+}
+sav div {
+    display: block;
+    height: 2em;
+    margin: 0;
+    /* border: 1px #2fbd8e dotted; */
+    background-color: #2196F3;
+    font-size: 1.15em;
+    line-height: 2em;
+    font-weight: 500;
+    color: white;
+    padding: 5px 10px;
+}
+main {
+    width: 80%;
+    background-color: #2979FF;
+    float: right;
+    margin: 0;
+    height: 100vh;
+}
+.content iframe{
+    width: 100%;
+    height: 99vh;
+}
