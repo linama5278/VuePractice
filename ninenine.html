@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Vue.js 9*9 Multiplication table</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script>
+		$(document).ready(function () {
+			var nine = new Vue({
+				el: '#ninenine',
+				data: {
+				    result: '',
+				}
+			});
+		});
+	</script>
+	<style>
+		table {
+			border: 1px solid #435466;
+			border-spacing: 0;
+			background: linear-gradient(to bottom, rgba(255,255,255,0.99) 0%,rgba(255,255,255,0.6) 100%),url("vue.png") no-repeat center 40%;
+			overflow: hidden;
+		}
+		tr:first-child, td:first-child {
+			font-weight: 700;
+			background-color: #e7f5ef;
+		}
+		tr, td {
+			border: 1px solid #435466;
+			text-align: center;
+			width: 35px;
+			height: 30px;
+		}
+		tr:hover {
+            background-color: #d0eddf;
+        }
+		td:hover {
+            background-color: #435466;
+            color: #e7f5ef;
+            font-weight: 900;
+        }
+		td {
+			position: relative;
+		}
+		td:hover::after {
+			content: "";
+			position: absolute;
+			background-color: #d0eddf;
+			left: 0;
+			top: -5000px;
+			height: 10000px;
+			width: 100%;
+			z-index: -1;
+		}
+	</style>
+</head>
+
+<body>
+<div id="ninenine">
+    <table>
+        <tr v-for="i in 9">
+            <td v-for="j in 9">{{ i*j }}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
