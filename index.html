@@ -4,28 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
     <link rel="stylesheet" href="./main.css" type="text/css" />
     <title>Vue.js Practice</title>
 </head>
 <body>
     <div class="container">
-        <header>            
+        <header :class="{ fadeIn: active }">            
             <sav>
                 <h2>Vue.js Practice</h2>
                 <div><a href="counter.html" target="main">Counter &amp; Toggle</a></div>
                 <div><a href="list.html" target="main">List - pop</a></div>
                 <div><a href="todolist.html" target="main">To-Do List</a></div>
                 <div><a href="tic.html" target="main">TicTacToe</a></div>
-                <div><a href="component.html" target="main">Component</a></div>
+                <div><a href="component.hlmt" target="main">Component</a></div>
                 <div><a href="city.html" target="main">Taiwan ZipCode</a></div>
                 <div><a href="streamers.html" target="main">Homework</a></div>  
             </sav>
         </header>
+        <div class="slide" id="slidenav" @click="slideCli" :class="{ slideLeft: active }">≡</div>
         <main>
             <div class="content">
                 <iframe src="counter.html" frameborder="0" name="main"></iframe>
             </div>
         </main>
     </div>
+    <script>
+        new Vue({
+            el:".container",
+            data: {
+                active: false,
+            },
+            methods:{
+                slideCli() {
+                    this.active = !this.active;
+                }
+            },
+        });
+    </script>
 </body>
 </html>

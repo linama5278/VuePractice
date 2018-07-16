@@ -10,6 +10,8 @@ header {
     padding: 0;
     background-color: #1976D2;
     float: left;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
 }
 header h2 {
     color: #E3F2FD;
@@ -49,4 +51,45 @@ main {
 .content iframe{
     width: 100%;
     height: 99vh;
+}
+.slide {
+    display: none;
+}
+@media only screen and (max-width: 767px) {
+    .fadeIn {
+        display: block;
+        width: 60vw;
+        z-index: -1;
+        float: left;
+    }
+    header {
+        display: none;
+    }
+    main {
+        padding-top: 1.5em;
+        width: 100%;
+        float: none;
+    }
+    .content iframe{
+        width: 100%;
+        height: 99vh;
+        position: absolute;
+    }
+    .slide {
+        display: block;
+        width: 1.6em;
+        height: 1.8em;
+        position: fixed;
+        top: 4px;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 700;
+        background-color: #80D8FF;
+        cursor: pointer;
+        border-top-right-radius: 25%;
+        border-bottom-right-radius: 25%;
+    }
+    .slideLeft {
+        transform: translateX(60vw);
+    }
 }
