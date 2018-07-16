@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <title>Document</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="ref">
+        <div>Click Enter Change Input Box.</div>
+        <div>
+            <input v-for="(list, idx) in lists" :placeholder="list" ref="lists" @keydown.enter="focus(idx+1)"/>
+        </div>
+    </div>
+    <script>
+        const lists = [
+            'Name',
+            'Address',
+            'Dept',
+            'Memo'
+        ]
+        new Vue({
+            el: '#ref',
+            data: {},
+            methods: {
+                focus(idx) {
+                    const input = this.$refs.lists[idx];
+                    if(input){
+                        input.focus();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
