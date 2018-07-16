@@ -80,7 +80,7 @@ main {
         width: 1.6em;
         height: 1.8em;
         position: fixed;
-        top: 4px;
+        top: 2px;
         text-align: center;
         font-size: 1.2em;
         font-weight: 700;
@@ -88,6 +88,7 @@ main {
         cursor: pointer;
         border-top-right-radius: 25%;
         border-bottom-right-radius: 25%;
+        z-index: 10;
     }
     .slideLeft {
         transform: translateX(60vw);
