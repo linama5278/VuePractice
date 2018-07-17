@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        #phone {
+            width: 360px;
+        }
+        .monitor {
+            width: 360px;
+            background-color: #a2c4bb;
+            font: 3.5em 'LCD',sans-serif;
+            height: 2em;
+            line-height: 2em;
+            text-align: center;
+        }
+        .monitor .delete {
+            font-size: 0.7em;
+            float: right;
+            margin-right: 10px;
+        }
+        #keypad {
+            text-align: center;
+        }
+        button {
+            background-color: white;
+            font-size: 3em;
+            width: 1.45em;
+            border-radius: 50%;
+            color: #666;
+            margin: 20px;
+            padding: 5px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        button:active {
+            color: #2196F3;
+            border: 2px #2196F3 inset;
+        }
+    </style>
+</head>
+<body>
+    <div id="phone" @keydown="keyInPad">
+        <div class="monitor">{{numbers}}<span class="delete" @click="delNumber"><i class="fas fa-backspace"></i></span></div>
+        <div id="keypad">
+            <button v-for="pad in pads" @click="clickPad" :value="pad">{{pad}}</button>
+        </div>
+    </div>
+    <script>        
+        new Vue({
+            el: "#phone",
+            data: {
+                pads: [
+                    '1','2','3','4','5','6','7','8','9','*','0','#'
+                ],
+                numbers: '',
+            },
+            methods: {
+                clickPad(e) {
+                    this.numbers += e.target.value;
+                },
+                keyInPad(e) {
+                    console.log(e);
+                    alert("logV");
+                },
+                delNumber() {
+                    this.numbers = this.numbers.substring( 0, this.numbers.length - 1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
