@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <title>Document</title>
     <style>
+        body{
+            margin: 0;
+        }
         #phone {
             width: 360px;
         }
@@ -28,11 +31,13 @@
             text-align: center;
         }
         button {
+            display: inline-block;
             background-color: white;
             font-size: 3em;
             width: 1.45em;
             border-radius: 50%;
-            color: #666;
+            color: #666;            
+            border: 2px rgb(201, 201, 201) outset;
             margin: 20px;
             padding: 5px;
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -49,7 +54,7 @@
                 width: calc(100vw - 18px);
             }
             #keypad {
-                width: 21em;
+                width: 100%;
             }
         }
     </style>
