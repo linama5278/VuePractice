@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <link rel="stylesheet" href="./button.css" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
     <title>Document</title>
     <style>
@@ -29,7 +29,7 @@
 <body>
     <div id="game">
         <div class="board">
-            <h1>You trun:<span v-html="getSymbol(player)"></span></h1>
+            <h1>You trun: <span v-html="getSymbol(player)"></span></h1>
             <div class="grid" v-for="(num, index) in grids" @click="choiceThis(index)" v-html="getSymbol(num)">
                 
             </div>
@@ -93,8 +93,8 @@
             },
             methods: {
                 getSymbol(num) {
-                    if (num === 1) return '<span style="color:#bbdefb">Ｏ</span>';
-                    else if (num === -1) return '<span style="color:#ffcdd2">Ｘ</span>';
+                    if (num === 1) return '<span style="color:#1ab7ea">Ｏ</span>';
+                    else if (num === -1) return '<span style="color:#cd201f">Ｘ</span>';
                     else return '　';
                 },
                 choiceThis(idx) {

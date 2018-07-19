@@ -8,23 +8,23 @@ header {
     width: 20%;
     height: 100vh;
     padding: 0;
-    background-color: #1976D2;
+    background-color: #2fbd8e;
     float: left;
     -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
     transition: width 2s;
 }
 header h2 {
-    color: #E3F2FD;
-    text-shadow: 1px 1px 5px #111111;
+    color: #435466;
+    text-shadow: 1px 1px 5px #fcfcfc;
     text-align: center;
 }
 a {
     text-decoration: none;
-    color :white;
+    color :#ffffff;
 }
 a:hover {
     text-decoration: none;
-    color: #80D8FF;
+    color: #7f8c8d;
 }
 sav {
     display: block;
@@ -33,17 +33,16 @@ sav div {
     display: block;
     height: 2em;
     margin: 0;
-    /* border: 1px #2fbd8e dotted; */
-    background-color: #2196F3;
+    background-color: #435466;
     font-size: 1.15em;
     line-height: 2em;
     font-weight: 500;
-    color: white;
+    color: #ffffff;
     padding: 5px 10px;
 }
 main {
     width: 80%;
-    background-color: #2979FF;
+    background-color: #f8f8f8;
     float: right;
     margin: 0;
     height: 100vh;
@@ -87,7 +86,7 @@ main {
         text-align: center;
         font-size: 1.2em;
         font-weight: 700;
-        background-color: #80D8FF;
+        background-color: #42b983;
         cursor: pointer;
         border-top-right-radius: 25%;
         border-bottom-right-radius: 25%;

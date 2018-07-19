@@ -1,0 +1,24 @@
+body{
+    font-family: initial;
+}
+button {
+    font-size: 1.2em;
+    border: 0 solid #fff;
+    padding: 4px 12px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px #cacaca;
+}
+button:active {
+    background-color: #2fbd8e;
+    color: #fff;
+}
+input {    
+    font-size: 1.2em;
+}
+select {
+    font-size: 1.2em;
+    border: 0 solid #fff;
+    border-bottom: 2px solid #2fbd8e;
+    background-color: transparent;
+    padding: 6px;
+}

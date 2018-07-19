@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <link rel="stylesheet" href="./button.css" type="text/css" />
     <title>Document</title>
 </head>
 
@@ -16,7 +17,7 @@
         <button v-on:click="addCount">+1</button>
         <button v-on:click="accCount">+{{i}}</button>
     </div>
-
+    <p></p>
     <div id='look'>
         <button v-on:click="toggle">Toggle</button>
         <h1 v-if="show">Hello World!!</h1>
