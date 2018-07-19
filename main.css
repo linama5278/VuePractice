@@ -57,13 +57,16 @@ main {
 }
 @media only screen and (max-width: 767px) {
     .fadeIn {
-        display: block;
-        width: 60vw;
-        z-index: -1;
-        float: left;
+        transform: translateX(60vw);
     }
     header {
-        display: none;
+        width: 60vw;
+        z-index: 3;
+        position: fixed;
+        top: 0;
+        left: -60vw;
+        transition: transform .3s ease-out;
+        opacity: .95;
     }
     main {
         padding-top: 1.5em;
@@ -89,6 +92,8 @@ main {
         border-top-right-radius: 25%;
         border-bottom-right-radius: 25%;
         z-index: 10;
+        transition: transform .3s ease-out;
+        opacity: .95;
     }
     .slideLeft {
         transform: translateX(60vw);
