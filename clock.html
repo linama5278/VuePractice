@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Clock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.25">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Oswald:400,700,300);
+        @import url(https://fonts.googleapis.com/css?family=Hammersmith+One);
+        @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+        html,
+        body {
+        margin: 0;
+        padding: 0;
+        color: #eaeaea;
+        overflow: hidden;
+        background: teal;
+        font-family: "Hammersmith One";
+        }
+        .clock {
+        position: absolute;
+        right: 25px;
+        text-align: center;
+        text-shadow: 1px 1px 0px #00caca,1px 1px 0px #00caca,2px 2px 0px #00c9c9,2px 2px 0px #00c9c9,3px 3px 0px #00c7c7,3px 3px 0px #00c7c7,4px 4px 0px #00c5c5,4px 4px 0px #00c5c5,5px 5px 0px #00c4c4,5px 5px 0px #00c4c4,6px 6px 0px #00c2c2,6px 6px 0px #00c2c2,7px 7px 0px #00c1c1,7px 7px 0px #00c1c1,8px 8px 0px #00bfbf,8px 8px 0px #00bfbf,9px 9px 0px #00bdbd,9px 9px 0px #00bdbd,10px 10px 0px #00bcbc,10px 10px 0px #00bcbc,11px 11px 0px #00baba,11px 11px 0px #00baba,12px 12px 0px #00b8b8,12px 12px 0px #00b8b8,13px 13px 0px #00b7b7,13px 13px 0px #00b7b7,14px 14px 0px #00b5b5,14px 14px 0px #00b5b5,15px 15px 0px #00b4b4,15px 15px 0px #00b4b4,16px 16px 0px #00b2b2,16px 16px 0px #00b2b2,17px 17px 0px #00b0b0,17px 17px 0px #00b0b0,18px 18px 0px #00afaf,18px 18px 0px #00afaf,19px 19px 0px #00adad,19px 19px 0px #00adad,20px 20px 0px #00abab,20px 20px 0px #00abab,21px 21px 0px #00aaaa,21px 21px 0px #00aaaa,22px 22px 0px #00a8a8,22px 22px 0px #00a8a8,23px 23px 0px #00a6a6,23px 23px 0px #00a6a6,24px 24px 0px #00a5a5,24px 24px 0px #00a5a5,25px 25px 0px #00a3a3,25px 25px 0px #00a3a3,26px 26px 0px #00a2a2,26px 26px 0px #00a2a2,27px 27px 0px #00a0a0,27px 27px 0px #00a0a0,28px 28px 0px #009e9e,28px 28px 0px #009e9e,29px 29px 0px #009d9d,29px 29px 0px #009d9d,30px 30px 0px #009b9b,30px 30px 0px #009b9b,31px 31px 0px #009999,31px 31px 0px #009999,32px 32px 0px #009898,32px 32px 0px #009898,33px 33px 0px #009696,33px 33px 0px #009696,34px 34px 0px #009595,34px 34px 0px #009595,35px 35px 0px #009393,35px 35px 0px #009393,36px 36px 0px #009191,36px 36px 0px #009191,37px 37px 0px #009090,37px 37px 0px #009090,38px 38px 0px #008e8e,38px 38px 0px #008e8e,39px 39px 0px #008c8c,39px 39px 0px #008c8c,40px 40px 0px #008a8a,40px 40px 0px #008a8a,41px 41px 0px #008989,41px 41px 0px #008989,42px 42px 0px #008787,42px 42px 0px #008787,43px 43px 0px #008686,43px 43px 0px #008686,44px 44px 0px #008484,44px 44px 0px #008484,45px 45px 0px #008383,45px 45px 0px #008383,46px 46px 0px #008181,46px 46px 0px #008181,47px 47px 0px #007f7f,47px 47px 0px #007f7f,48px 48px 0px #007e7e,48px 48px 0px #007e7e,49px 49px 0px #007c7c,49px 49px 0px #007c7c,50px 50px 0px #007a7a,50px 50px 0px #007a7a,51px 51px 0px #007979,51px 51px 0px #007979,52px 52px 0px #007777,52px 52px 0px #007777,53px 53px 0px #007676,53px 53px 0px #007676,54px 54px 0px #007474,54px 54px 0px #007474,55px 55px 0px #007272,55px 55px 0px #007272,56px 56px 0px #007171,56px 56px 0px #007171,57px 57px 0px #006f6f,57px 57px 0px #006f6f,58px 58px 0px #006d6d,58px 58px 0px #006d6d,59px 59px 0px #006c6c,59px 59px 0px #006c6c,60px 60px 0px #006a6a,60px 60px 0px #006a6a,61px 61px 0px #006868,61px 61px 0px #006868,62px 62px 0px #006767,62px 62px 0px #006767,63px 63px 0px #006565,63px 63px 0px #006565,64px 64px 0px #006464,64px 64px 0px #006464,65px 65px 0px #006262,65px 65px 0px #006262,66px 66px 0px #006060,66px 66px 0px #006060,67px 67px 0px #005f5f,67px 67px 0px #005f5f,68px 68px 0px #005d5d,68px 68px 0px #005d5d,69px 69px 0px #005b5b,69px 69px 0px #005b5b,70px 70px 0px #005a5a,70px 70px 0px #005a5a,71px 71px 0px #005858,71px 71px 0px #005858,72px 72px 0px #005656,72px 72px 0px #005656,73px 73px 0px #005555,73px 73px 0px #005555,74px 74px 0px #005353,74px 74px 0px #005353,75px 75px 0px #005252,75px 75px 0px #005252,76px 76px 0px #005050,76px 76px 0px #005050,77px 77px 0px #004e4e,77px 77px 0px #004e4e,78px 78px 0px #004d4d,78px 78px 0px #004d4d,79px 79px 0px #004b4b,79px 79px 0px #004b4b,80px 80px 0px #004949,80px 80px 0px #004949,81px 81px 0px #004848,81px 81px 0px #004848,82px 82px 0px #004646,82px 82px 0px #004646,83px 83px 0px #004545,83px 83px 0px #004545,84px 84px 0px #004343,84px 84px 0px #004343,85px 85px 0px #004141,85px 85px 0px #004141,86px 86px 0px #004040,86px 86px 0px #004040,87px 87px 0px #003e3e,87px 87px 0px #003e3e,88px 88px 0px #003c3c,88px 88px 0px #003c3c,89px 89px 0px #003b3b,89px 89px 0px #003b3b,90px 90px 0px #003939,90px 90px 0px #003939,91px 91px 0px #003737,91px 91px 0px #003737,92px 92px 0px #003636,92px 92px 0px #003636,93px 93px 0px #003434,93px 93px 0px #003434,94px 94px 0px #003333,94px 94px 0px #003333,95px 95px 0px #003131,95px 95px 0px #003131,96px 96px 0px #002f2f,96px 96px 0px #002f2f,97px 97px 0px #002e2e,97px 97px 0px #002e2e,98px 98px 0px #002c2c,98px 98px 0px #002c2c,99px 99px 0px #002a2a,99px 99px 0px #002a2a,100px 100px 0px #002929,100px 100px 0px #002929,101px 101px 0px #002727,101px 101px 0px #002727,102px 102px 0px #002626,102px 102px 0px #002626,103px 103px 0px #002424,103px 103px 0px #002424,104px 104px 0px #002222,104px 104px 0px #002222,105px 105px 0px #002121,105px 105px 0px #002121,106px 106px 0px #001f1f,106px 106px 0px #001f1f,107px 107px 0px #001d1d,107px 107px 0px #001d1d,108px 108px 0px #001c1c,108px 108px 0px #001c1c,109px 109px 0px #001a1a,109px 109px 0px #001a1a,110px 110px 0px #001818,110px 110px 0px #001818,111px 111px 0px #001717,111px 111px 0px #001717,112px 112px 0px #001515,112px 112px 0px #001515,113px 113px 0px #001414,113px 113px 0px #001414,114px 114px 0px #001212,114px 114px 0px #001212,115px 115px 0px #001010,115px 115px 0px #001010,116px 116px 0px #000f0f,116px 116px 0px #000f0f,117px 117px 0px #000d0d,117px 117px 0px #000d0d,118px 118px 0px #000b0b,118px 118px 0px #000b0b,119px 119px 0px #000a0a,119px 119px 0px #000a0a,120px 120px 0px #000808,120px 120px 0px #000808,121px 121px 0px #000707,121px 121px 0px #000707,122px 122px 0px #000505,122px 122px 0px #000505,123px 123px 0px #000303,123px 123px 0px #000303,124px 124px 0px #000202,124px 124px 0px #000202,125px 125px 0px black,125px 125px 0px black;
+        }
+        .hour {
+        font-size: 200px;
+        font-weight: 700;
+        margin-bottom: -50px;
+        }
+        .minutes {
+        font-size: 110px;
+        letter-spacing: 2px;
+        font-weight: 400;
+        margin-left: 80px;
+        margin-bottom: -20px;
+        }
+        .seconds {
+        font-weight: 400;
+        font-size: 65px;
+        letter-spacing: 2px;
+        margin-left: 100px;
+        }
+        .week {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        padding: 5px 10px;
+        font-size: 20px;
+        background: #007a7a;
+        font-weight: 300;
+        letter-spacing: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid #0d8686;
+        }
+        .week div {
+        display: inline-block;
+        }
+        .week .day {
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.5);
+        letter-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class='clock'>
+        <div class='hour'></div>
+        <div class='minutes'></div>
+        <div class='seconds'></div>
+    </div>
+    <div class='week'>
+        <div class='day'></div>
+        <div class='month'></div>
+        <div class='year'></div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            setInterval(function(){
+            var hour=new Date().getHours();
+                if(hour<10){
+                    $(".hour").html("0"+hour);
+                }
+                else if(hour>12){
+                    hour=hour-12;
+                    if(hour<10){
+                        $(".hour").html("0"+hour);
+                    }
+                    else{
+                        $(".hour").html(hour);
+                    }
+                }
+                else{
+                $(".hour").html(hour);
+                }
+            },1000)
+            setInterval(function(){
+                var minutes=new Date().getMinutes();
+                if(minutes < 10){
+                    $(".minutes").html("0"+minutes);
+                }
+                else{
+                $(".minutes").html(minutes);
+                }
+            })
+            setInterval(function(){
+                var seconds=new Date().getSeconds();
+                if(seconds<10){
+                    $(".seconds").html("0"+seconds);
+                }
+                else{
+                $(".seconds").html(seconds);
+                }
+            },1000);
+            
+            var weekday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            var month=["January","February","March","April","May","June","July","August","September","October","November","December"];
+            setInterval(function(){
+                var d=new Date();
+                var dow=weekday[d.getDay()];
+                var mo=month[d.getMonth()];
+                var num=d.getDate();
+                var date=mo+" "+num
+                var yr=d.getFullYear();
+                $(".day").html(dow);
+                $(".month").html(date);
+                $(".year").html(yr);
+            },1000)
+        });
+    </script>
+</body>
+<!--BY https://codepen.io/nilbog/pen/GJKRyZ-->
+</html>
