@@ -12,6 +12,7 @@ header {
     float: left;
     -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
     transition: width 2s;
+    overflow: auto;
 }
 header h2 {
     color: #435466;
