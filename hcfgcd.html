@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <link rel="stylesheet" href="./button.css" type="text/css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='calc'>
+        <h1>Calculate HCF & GCD</h1>
+        <input type="text" maxlength="3" size="3" v-model="x"/>
+        <input type="text" maxlength="3" size="3" v-model="y"/>
+        <button v-on:click="DoCalc">calculate</button>
+        <h3>HCF：{{hcf}}</h3>
+        <h3>GCD：{{gcd}}</h3>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#calc',
+            data: {
+                x: '',
+                y: '',
+                hcf: '',
+                gcd: ''
+            },
+            methods: {
+                DoCalc(){
+                    this.hcf = this.Mgn(this.x, this.y);
+                    this.gcd = this.Msn(this.x, this.y);
+                },
+                Mgn(num1, num2){  
+                    return num2 != 0 ? this.Mgn(num2, num1 % num2) : num1;
+                },
+                Msn(num1, num2){
+                    return num1 * num2 / this.Mgn(num1, num2);
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>
