@@ -42,8 +42,8 @@
 		}
 		#back {
 			position: fixed;
-			left: 1em;
-			top: 1em;
+			left: .6em;
+			top: .6em;
 			font-size: 1.15em;
 		}
 		.back-button {
@@ -51,7 +51,8 @@
     		border: 0;
 			color: #777777;
 			font-weight: 600;
-			padding: 6px 15px;
+			padding: 6px 12px;
+			cursor: pointer;
     		user-select: none;
 			-webkit-user-select: none;
 			-moz-user-select: none;
@@ -71,7 +72,7 @@
 	<body>
 		<div class="header"></div>
 		<div id="content">
-			<div id="back">
+			<div id="back" v-if="headnav">
 				<button type="button" @click="ShowDiv('main')" class="back-button">
 					<i class="fas fa-chevron-left"></i> 返回
 				</button>
@@ -114,7 +115,7 @@
 							</button>
 						</div>
 					</div>
-					<div class="row mt-3">
+					<div class="row mt-3 mb-5">
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('intro')">
 								<h2><i class="fas fa-store"></i></h2>
@@ -181,18 +182,19 @@
 		$('.carousel').carousel({
 			interval: 2000
 		});
-		$('#content').children().hide();
+		$('#content').children().not('#back').hide();
 		$('#main').show();
 		new Vue({
 			el: '#content',
 			data: {
-				gotodiv: '',
+				headnav: false,
 			},
 			methods: {
 				ShowDiv: function(div) {
-					$('#content').children().hide();
-					$('#back').show();
+					$('#content').children().not('#back').hide();
 					$('#' + div).show();
+					if (div != 'main') { this.headnav = true; }
+					else { this.headnav = false; }
 				}
 			}
 		});
