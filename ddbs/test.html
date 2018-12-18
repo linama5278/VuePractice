@@ -78,7 +78,7 @@
 				</button>
 			</div>
 			<div id="main">
-				<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+				<div id="carousel-img" class="carousel slide carousel-fade" data-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<img class="d-block" src="slied-12470145.jpg" alt="First slide">
@@ -92,7 +92,16 @@
 					</div>
 				</div>
 				<div class="alert alert-secondary" role="alert">
-					歡迎使用阿丹家庭美髮 APP💗
+					<div id="carousel-text" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								歡迎使用阿丹家庭美髮 APP💗
+							</div>
+							<div class="carousel-item">
+								12/29(六)、12/30(日) 老闆娘出遊沒開店😓
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="container">
 					<div class="row">
@@ -115,7 +124,7 @@
 							</button>
 						</div>
 					</div>
-					<div class="row mt-3 mb-5">
+					<div class="row mt-3 mb-4">
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('intro')">
 								<h2><i class="fas fa-store"></i></h2>
@@ -164,8 +173,75 @@
 					</div>
 				</div>
 			</div>
-			<div id="intro"></div>			
-			<div id="instagram"></div>
+			<div id="intro">
+				<div class="container mt-3">
+					<div class="row">
+						<div class="col-12 col-lg-6">
+							<div class="card border-primary mb-3">
+								<div class="card-header"><h5 class="card-title">店休時間</h5></div>
+								<div class="card-body text-primary">
+									<p class="card-text">
+										<ul>
+											<li>週一至周六，早上8:00~下午6:00</li>
+											<li>週日，不定時(若有需要請電話詢問)</li>
+											<li>特殊節日休假不定，請查注意選單跑馬燈資訊</li>
+										</ul>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-6">
+							<div class="card border-secondary mb-3">
+								<div class="card-header"><h5 class="card-title">服務項目</h5></div>
+								<div class="card-body text-secondary">
+									<p class="card-text">
+										<ul>
+											<li>第一個是瑞士的Echo Marlee淨白課程</li>
+										</ul>
+									</p>
+									<a href="#" class="card-link btn btn-outline-secondary">更多內容...</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>				  
+			</div>			
+			<div id="instagram">
+				<div class="container mt-3">
+					<div class="row">
+						<div class="col-12 col-md-6 mb-3">
+							<div class="card">
+								<img class="card-img-to img-fluid" src="46846419_347234372734875_2655657238061721685_n.jpg" alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">台北夜晚日常街景，走吧~逛街去囉🛍️🛍️🛍️
+											📍Attraction : Xinyi District
+											-----
+											♥感謝 @samtwphotography 分享美照📷
+											-----
+											信義區的週末日常🏙</p>
+									<p class="card-text"><small>#台北 #台北景點 #現在玩台北 #Taipei #travel #photography #igtravel #iseetaiwan #iseetaipei #taipeitravel #discovertaipei #traveltagged #風景 #写真 #旅行 #여행 #타이페이 #여행스타그램 #풍경 #대만 #信義商圈</small></p>
+									<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 mb-3">
+							<div class="card">
+								<img class="card-img-top img-fluid" src="47694283_144717369847905_7795070162051873497_n.jpg" alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">台北夜晚日常街景，走吧~逛街去囉🛍️🛍️🛍️
+											📍Attraction : Xinyi District
+											-----
+											♥感謝 @samtwphotography 分享美照📷
+											-----
+											信義區的週末日常🏙</p>
+									<p class="card-text"><small>#台北 #台北景點 #現在玩台北 #Taipei #travel #photography #igtravel #iseetaiwan #iseetaipei #taipeitravel #discovertaipei #traveltagged #風景 #写真 #旅行 #여행 #타이페이 #여행스타그램 #풍경 #대만 #信義商圈</small></p>
+									<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div id="fqa"></div>
 		</div>
 	</body>
@@ -179,11 +255,16 @@
     <!-- Then Material JavaScript on top of Bootstrap JavaScript -->
     <script src="material/js/material.min.js"></script>
 	<script>
-		$('.carousel').carousel({
-			interval: 2000
+		$(function(){
+			$('#carousel-img').carousel({
+				interval: 2000
+			});
+			$('#carousel-text').carousel({
+				interval: 6000
+			});
+			$('#content').children().not('#back').hide();
+			$('#main').show();
 		});
-		$('#content').children().not('#back').hide();
-		$('#main').show();
 		new Vue({
 			el: '#content',
 			data: {
