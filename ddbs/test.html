@@ -9,7 +9,6 @@
     <link href="material/css/material.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<link rel="icon" type="image/png" href="Danicon.png" />
 	<style>
 		body {
@@ -47,7 +46,7 @@
 			font-size: 1.15em;
 		}
 		.back-button {
-			background-color: transparent;
+			background-color: rgba(255, 255, 255, 0.3);
     		border: 0;
 			color: #777777;
 			font-weight: 600;
@@ -68,6 +67,9 @@
 		.back-button:focus {
   			outline: none;
 		}
+		.info-block {
+			display: none;
+		}
 	</style>
 	<body>
 		<div class="header"></div>
@@ -77,7 +79,7 @@
 					<i class="fas fa-chevron-left"></i> 返回
 				</button>
 			</div>
-			<div id="main">
+			<div id="main" class="info-block">
 				<div id="carousel-img" class="carousel slide carousel-fade" data-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active">
@@ -103,24 +105,24 @@
 						</div>
 					</div>
 				</div>
-				<div class="container">
+				<div class="container" id="btn-grp">
 					<div class="row">
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('calendar')">
 								<h2><i class="fas fa-calendar-plus"></i></h2>
-								柚惜乾
+								{{ Calender }}
 							</button>
 						</div>
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('phone')">
 								<h2><i class="fas fa-phone"></i></h2>
-								卡等喂
+								{{ Contact }}
 							</button>
 						</div>
 						<div class="col-4 center">
-							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('map')">
+							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('maps')">
 								<h2><i class="fas fa-map-marked-alt"></i></h2>
-								挖底家
+								{{ Maps }}
 							</button>
 						</div>
 					</div>
@@ -128,26 +130,26 @@
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('intro')">
 								<h2><i class="fas fa-store"></i></h2>
-								無欸某
+								{{ Introduce }}
 							</button>
 						</div>
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('instagram')">
 								<h2><i class="fab fa-instagram"></i></h2>
-								埃　基
+								{{ Instagram }}
 							</button>
 						</div>
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('fqa')">
 								<h2><i class="fas fa-question-circle"></i></h2>
-								悶代誌
+								{{ FQA }}
 							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div id="calendar"></div>
-			<div id="phone">
+			<div id="calendar" class="info-block"></div>
+			<div id="phone" class="info-block">
 				<div class="container mt-3">
 					<ul class="list-group">
 						<a href="tel:087235287" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
@@ -161,7 +163,7 @@
 					</ul>
 				</div>
 			</div>
-			<div id="map">
+			<div id="maps" class="info-block">
 				<div class="container mt-3 mb-3">
 					<div class="jumbotron">
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.4133550019706!2d120.49792781506595!3d22.67565128512989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e1793ee7b265d%3A0xd1c4cb822ccdcdd0!2zOTAw5bGP5p2x57ij5bGP5p2x5biC5buj5p2x6LevMTg55be3MeiZnw!5e0!3m2!1szh-TW!2stw!4v1544861067387" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -173,7 +175,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="intro">
+			<div id="intro" class="info-block">
 				<div class="container mt-3">
 					<div class="row">
 						<div class="col-12 col-lg-6">
@@ -206,7 +208,7 @@
 					</div>
 				</div>				  
 			</div>			
-			<div id="instagram">
+			<div id="instagram" class="info-block">
 				<div class="container mt-3">
 					<div class="row">
 						<div class="col-12 col-md-6 mb-3">
@@ -240,20 +242,86 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+							<div class="col-12 col-md-6 mb-3">
+								<div class="card">
+									<img class="card-img-to img-fluid" src="47167654_380727409382586_2366640504814320394_n.jpg" alt="Card image cap">
+									<div class="card-body">
+										<p class="card-text">台北夜晚日常街景，走吧~逛街去囉🛍️🛍️🛍️
+												📍Attraction : Xinyi District</p>
+										<p class="card-text"><small>#台北 #台北景點 #現在玩台北 #Taipei #travel #photography #igtravel #iseetaiwan #iseetaipei #taipeitravel #discovertaipei #traveltagged #風景 #写真 #旅行 #여행 #타이페이 #여행스타그램 #풍경 #대만 #信義商圈</small></p>
+										<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+									</div>
+								</div>
+							</div>
+						</div>
 				</div>
 			</div>
-			<div id="fqa"></div>
+			<div id="fqa" class="info-block">
+				<div class="accordion" id="accordionExample">
+					<div class="card">
+						<div class="card-header" id="headingOne">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+								Q: 如果沒有預約，是否可以洗頭(做頭髮)？
+								</button>
+							</h5>
+						</div>
+						<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+						<div class="card-body">
+							這個問題問得真好，<br />
+							老闆如果在店裡會接告知您是否可以做，<br />
+							如果老闆不在店，您最好以電話預約，<br />
+							以免耽誤您的時間。
+						</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="headingTwo">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Q: 因為我是開車，你們巷子裡面可以停車嗎？
+								</button>
+							</h5>
+						</div>
+						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						<div class="card-body">
+							因為是3米路，<br />
+							建議盡量騎機車或步行，<br />
+							倘若您真的需要開車，<br />
+							附近可以停在慈輝書局對面，<br />
+							盡量不要影響道路通暢，謝謝配合。<br />
+						</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="headingThree">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Q: 小朋友剪頭髮或洗頭髮，費用會比較高嗎？
+								</button>
+							</h5>
+						</div>
+						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						<div class="card-body">
+							不會，請父母放心，有需要的話可以來電詢問。
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	
     <!-- Then Material JavaScript on top of Bootstrap JavaScript -->
-    <script src="material/js/material.min.js"></script>
+	<script src="material/js/material.min.js"></script>
+	<script src="btn-grp.js"></script>
 	<script>
 		$(function(){
 			$('#carousel-img').carousel({
@@ -262,18 +330,23 @@
 			$('#carousel-text').carousel({
 				interval: 6000
 			});
-			$('#content').children().not('#back').hide();
 			$('#main').show();
 		});
 		new Vue({
 			el: '#content',
 			data: {
 				headnav: false,
+				Calender: "行事曆",
+				Contact: "電話",
+				Maps: "地址",
+				Introduce: "介紹",
+				Instagram: "IG",
+				FQA: "問與答"
 			},
 			methods: {
 				ShowDiv: function(div) {
-					$('#content').children().not('#back').hide();
-					$('#' + div).show();
+					$('#content').children().hide();
+					$('#' + div).fadeIn();
 					if (div != 'main') { this.headnav = true; }
 					else { this.headnav = false; }
 				}
