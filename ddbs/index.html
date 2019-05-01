@@ -51,6 +51,7 @@
 			left: .6em;
 			top: .6em;
 			font-size: 1.15em;
+			z-index: 99;
 		}
 		.back-button {
 			background-color: rgba(255, 255, 255, 0.3);
@@ -77,6 +78,11 @@
 		.info-block {
 			display: none;
 		}
+		.gradient {
+			background: -webkit-linear-gradient(right top,#ff4081, #9c27b0);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
 	</style>
 	<body>
 		<div class="header"></div>
@@ -90,13 +96,13 @@
 				<div id="carousel-img" class="carousel slide carousel-fade" data-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img class="d-block" src="images/slieds/slied-12470145.jpg" alt="First slide">
+							<img class="d-block w-100" src="images/slieds/slied-12470145.jpg" alt="招牌">
 						</div>
 						<div class="carousel-item">
-							<img class="d-block" src="images/slieds/slied-12483107.jpg" alt="Second slide">
+							<img class="d-block w-100" src="images/slieds/slied-12483107.jpg" alt="店內">
 						</div>
 						<div class="carousel-item">
-							<img class="d-block" src="images/slieds/slied-12864180.jpg" alt="Third slide">
+							<img class="d-block w-100" src="images/slieds/slied-12864180.jpg" alt="Third slide">
 						</div>
 					</div>
 				</div>
@@ -116,19 +122,19 @@
 					<div class="row">
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('calendar')">
-								<h2><i class="fas fa-calendar-plus"></i></h2>
+								<h2><i class="fas fa-calendar-plus gradient"></i></h2>
 								{{ Calender }}
 							</button>
 						</div>
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('phone')">
-								<h2><i class="fas fa-phone"></i></h2>
+								<h2><i class="fas fa-phone gradient"></i></h2>
 								{{ Contact }}
 							</button>
 						</div>
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('maps')">
-								<h2><i class="fas fa-map-marked-alt"></i></h2>
+								<h2><i class="fas fa-map-marked-alt gradient"></i></h2>
 								{{ Maps }}
 							</button>
 						</div>
@@ -136,19 +142,19 @@
 					<div class="row mt-3 mb-4">
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('intro')">
-								<h2><i class="fas fa-store"></i></h2>
+								<h2><i class="fas fa-store gradient"></i></h2>
 								{{ Introduce }}
 							</button>
 						</div>
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('instagram')">
-								<h2><i class="fab fa-instagram"></i></h2>
+								<h2><i class="fab fa-instagram gradient"></i></h2>
 								{{ Instagram }}
 							</button>
 						</div>
 						<div class="col-4 center">
 							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('fqa')">
-								<h2><i class="fas fa-question-circle"></i></h2>
+								<h2><i class="fas fa-question-circle gradient"></i></h2>
 								{{ FQA }}
 							</button>
 						</div>
@@ -195,8 +201,8 @@
 									<p class="card-text">
 										<ul>
 											<li>週一至周六，早上8:00~下午6:00</li>
-											<li>週日，不定時(若有需要請電話詢問)</li>
-											<li>特殊節日休假不定，請查注意選單跑馬燈資訊</li>
+											<li>週日，不定時(如有需要，請電話詢問)</li>
+											<li>特殊節日休假不定</li>
 										</ul>
 									</p>
 								</div>
@@ -208,10 +214,15 @@
 								<div class="card-body text-secondary">
 									<p class="card-text">
 										<ul>
-											<li>第一個是瑞士的Echo Marlee淨白課程</li>
+											<li>洗頭</li>
+											<li>理髮</li>
+											<li>染髮</li>
+											<li>護髮</li>
+											<li>燙髮(冷燙、蒸氣燙髮)</li>
+											<li>修甲</li>
 										</ul>
+										★ 價位：100元~1,500元左右，依服務項目計價。
 									</p>
-									<a href="#" class="card-link btn btn-outline-secondary">更多內容...</a>
 								</div>
 							</div>
 						</div>
@@ -280,7 +291,7 @@
 								這個問題問得真好，<br />
 								老闆如果在店裡會接告知您是否可以做，<br />
 								如果老闆不在店，您最好以電話預約，<br />
-								以免耽誤您的時間。
+								以免延誤您的時間，深感抱歉。
 							</div>
 						</div>
 					</div>
@@ -297,8 +308,8 @@
 								因為是3米路，<br />
 								建議盡量騎機車或步行，<br />
 								倘若您真的需要開車，<br />
-								附近可以停在慈輝書局對面，<br />
-								盡量不要影響道路通暢，謝謝配合。<br />
+								可停千禧公園周邊或其他巷弄，<br />
+								盡量不要影響道路通暢，造成不便請見諒，謝謝配合。<br />
 							</div>
 						</div>
 					</div>
@@ -313,6 +324,20 @@
 						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
 							<div class="card-body">
 								不會，請父母放心，有需要的話可以來電詢問。
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="headingFour">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								Q: 店內提供Wi-Fi？
+								</button>
+							</h5>
+						</div>
+						<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+							<div class="card-body">
+								有，如有需要使用可以詢問老闆。
 							</div>
 						</div>
 					</div>
