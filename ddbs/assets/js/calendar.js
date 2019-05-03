@@ -440,7 +440,7 @@ function showEventList(layout, max_events) {
 					}
 				}
 				var event_end_date = wordMonth[Number(end_date.getMonth())] + ' ' + end_date.getDate() + ', ' + end_date.getFullYear();
-				event_end_time = ' - ' + event_end_day + ', ' + event_end_date;
+				event_end_time = ' ~ ' + event_end_date + ' (' + event_end_day + ')';
 			}
 			
 			// Event time
@@ -463,7 +463,7 @@ function showEventList(layout, max_events) {
 														+ '</div>'
 														+ '<div class="event-item-right pull-left">'
 															+ '<div class="event-name link" onclick="showEventDetail(' + tiva_list_events[i].id + ', \'full\', 0, 0, 0)">' + tiva_list_events[i].name + '</div>'
-															+ '<div class="event-date"><i class="fa fa-calendar-o"></i>' + event_day + ', ' + event_date + event_end_time + '</div>'
+															+ '<div class="event-date"><i class="fa fa-calendar-o"></i>' + event_date + ' (' + event_day + ')' + event_end_time + '</div>'
 															+ '<div class="event-time">' + event_time + '</div>'
 															+ '<div class="event-intro">' + getShortText(tiva_list_events[i].description, 25) + '</div>'
 														+ '</div>'
@@ -502,7 +502,7 @@ function showEventList(layout, max_events) {
 					}
 				}
 				var event_end_date = wordMonth[Number(end_date.getMonth())] + ' ' + end_date.getDate() + ', ' + end_date.getFullYear();
-				event_end_time = ' - ' + event_end_day + ', ' + event_end_date;
+				event_end_time = ' ~ ' + event_end_date + ' (' + event_end_day + ')';
 			}
 			
 			// Event time
@@ -522,7 +522,7 @@ function showEventList(layout, max_events) {
 			jQuery('.tiva-event-list-compact').append(	'<div class="event-item">'
 															+ '<div class="event-image link" onclick="showEventDetail(' + tiva_list_events[i].id + ', \'compact\', 0, 0, 0)">' + event_image + '</div>'
 															+ '<div class="event-name link" onclick="showEventDetail(' + tiva_list_events[i].id + ', \'compact\', 0, 0, 0)">' + tiva_list_events[i].name + '</div>'
-															+ '<div class="event-date"><i class="fa fa-calendar-o"></i>' + event_day + ', ' + event_date + event_end_time + '</div>'
+															+ '<div class="event-date"><i class="fa fa-calendar-o"></i>' + event_date + ' (' + event_day + ')' + event_end_time + '</div>'
 															+ '<div class="event-time">' + event_time + '</div>'
 															+ '<div class="event-intro">' + getShortText(tiva_list_events[i].description, 15) + '</div>'	
 														+ '</div>'
@@ -571,7 +571,7 @@ function showEventDetail(id, layout, day, month, year) {
 				}
 			}
 			var event_end_date = wordMonth[Number(end_date.getMonth())] + ' ' + end_date.getDate() + ', ' + end_date.getFullYear();
-			event_end_time = ' - ' + event_end_day + ', ' + event_end_date;
+			event_end_time = ' ~ ' + event_end_date + ' (' + event_end_day + ')';
 		}
 		
 		// Event time
@@ -605,7 +605,7 @@ function showEventDetail(id, layout, day, month, year) {
 		jQuery('.tiva-event-detail-full').html(	'<div class="event-item">'
 													+ '<div class="event-image">' + event_image + '</div>'
 													+ '<div class="event-name">' + tiva_events[id].name + '</div>'
-													+ '<div class="event-date"><i class="fa fa-calendar-o"></i>' + event_day + ', ' + event_date + event_end_time  + '</div>'
+													+ '<div class="event-date"><i class="fa fa-calendar-o"></i>' + event_date + ' (' + event_day + ')' + event_end_time + '</div>'
 													+ '<div class="event-time">' + event_time + '</div>'
 													+ '<div class="event-location">' + event_location + '</div>'
 													+ event_desc
@@ -648,7 +648,7 @@ function showEventDetail(id, layout, day, month, year) {
 						}
 					}
 					var event_end_date = wordMonth[Number(end_date.getMonth())] + ' ' + end_date.getDate() + ', ' + end_date.getFullYear();
-					event_end_time = ' - ' + event_end_day + ', ' + event_end_date;
+					event_end_time = ' ~ ' + event_end_date + ' (' + event_end_day + ')';
 				}
 		
 				// Event time
@@ -682,7 +682,7 @@ function showEventDetail(id, layout, day, month, year) {
 				jQuery('.tiva-event-detail-compact').append( 	'<div class="event-item">'
 																	+ '<div class="event-image">' + event_image + '</div>'
 																	+ '<div class="event-name">' + tiva_events[events[i].id].name + '</div>'
-																	+ '<div class="event-date"><i class="fa fa-calendar-o"></i>' + event_date + event_end_time + ' (' + event_day + ')</div>'
+																	+ '<div class="event-date"><i class="fa fa-calendar-o"></i>' + event_date + ' (' + event_day + ')' + event_end_time + '</div>'
 																	+ '<div class="event-time">' + event_time + '</div>'
 																	+ '<div class="event-location">' + event_location + '</div>'
 																	+ event_desc
