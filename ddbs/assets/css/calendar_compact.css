@@ -1,5 +1,5 @@
 /* Events Calendar contain */
-.tiva-event-calendar.compact .tiva-event-calendar-wrap {
+.tiva-events-calendar.compact .tiva-events-calendar-wrap {
 	margin: 25px 0 30px 0;
 	border: 1px solid #dedade;
     box-shadow: 0 0 5px 2px rgba(145,145,145,.35);
@@ -56,7 +56,6 @@
 .tiva-calendar-compact .calendar-day-normal {
     text-align: center;
     color: #666;
-	font-size: 14px;
 	padding: 0 !important;
     height: 34px;
 	vertical-align: middle !important;
@@ -69,11 +68,10 @@
 }
 .tiva-calendar-compact .calendar-day-weekend {
 	color: #ef4f69;
-	font-size: 14px;
 }
 .tiva-calendar-compact .calendar-event-mark {
     position: absolute;
-    top: -7px;
+    top: -8px;
     right: 0;
     background: none !important;
 }
@@ -91,6 +89,22 @@
 }
 
 /* Event list */
+.tiva-event-list-compact {
+	padding: 15px;
+	background: #eeeeee;
+	display: none;
+}
+.tiva-event-list-compact .event-item {
+	width: 100%;
+	border-top: 1px dotted #666;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+.tiva-event-list-compact .event-item:first-child {
+	border-top: none;
+	margin-top: 0;
+	padding-top: 0;
+}
 .tiva-event-list-compact .event-image img {
 	width: 100%;
 	border: 1px solid #eee;
@@ -98,10 +112,31 @@
 }
 .tiva-event-list-compact .event-name {
 	font-size: 16px;
-	margin-bottom: 5px;
+	color: #5AA4A3;
+	margin-bottom: 6px;
+}
+.tiva-event-list-compact .event-time, .tiva-event-list-compact .event-date {
+	margin-bottom: 3px;
+	color: #ef4f69;
+	font-size: 13px;
+}
+.tiva-event-list-compact .event-time i, .tiva-event-list-compact .event-date i {
+	margin-right: 5px;
+}
+.tiva-event-list-compact .event-intro {
+	color: #666;
+	font-size: 14px;
+}
+.tiva-event-list-compact .link {
+	cursor: pointer;
 }
 
 /* Event detail */
+.tiva-event-detail-compact {
+	padding: 15px;
+	background: #eeeeee;
+	display: none;
+}
 .tiva-event-detail-compact .event-item {
 	width: 100%;
 	border-top: 1px dotted #666;
@@ -120,5 +155,48 @@
 }
 .tiva-event-detail-compact .event-name {
 	font-size: 16px;
+	color: #5AA4A3;
 	margin-bottom: 6px;
+}
+.tiva-event-detail-compact .event-time, .tiva-event-detail-compact .event-date, .tiva-event-detail-compact .event-location {
+	margin-bottom: 5px;
+	color: #666;
+	font-size: 14px;
+}
+.tiva-event-detail-compact .event-time i, .tiva-event-detail-compact .event-date i, .tiva-event-detail-compact .event-location i {
+	margin-right: 5px;
+	width: 14px;
+}
+.tiva-event-detail-compact .event-location i {
+	font-size: 18px;
+}
+.tiva-event-detail-compact .event-desc {
+	color: #666;
+	border-top: 1px solid #e2e2e2;
+	padding-top: 15px;
+	margin-top: 15px;
+	margin-bottom: 22px;
+	line-height: 22px;
+	font-size: 14px;
+}
+.tiva-event-detail-compact .event-link {
+	margin-bottom: 30px;
+}
+.tiva-event-detail-compact .event-link a {
+	color: #fff;
+    background: #5AA4A3;
+    padding: 8px 10px 8px 10px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 14px;
+    border: 0;
+	cursor: pointer;
+	position: relative;
+}
+.tiva-event-detail-compact .event-link a:hover {
+	text-decoration: none;
+}
+.tiva-event-detail-compact .event-link a i {
+	margin-right: 5px;
 }
