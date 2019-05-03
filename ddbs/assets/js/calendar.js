@@ -682,7 +682,7 @@ function showEventDetail(id, layout, day, month, year) {
 				jQuery('.tiva-event-detail-compact').append( 	'<div class="event-item">'
 																	+ '<div class="event-image">' + event_image + '</div>'
 																	+ '<div class="event-name">' + tiva_events[events[i].id].name + '</div>'
-																	+ '<div class="event-date"><i class="fa fa-calendar-o"></i>' + event_day + ', ' + event_date + event_end_time + '</div>'
+																	+ '<div class="event-date"><i class="fa fa-calendar-o"></i>' + event_date + event_end_time + ' (' + event_day + ')</div>'
 																	+ '<div class="event-time">' + event_time + '</div>'
 																	+ '<div class="event-location">' + event_location + '</div>'
 																	+ event_desc
@@ -756,7 +756,6 @@ jQuery(document).ready(function(){
 	// Get events from json file or ajax php
 	var source = (typeof jQuery('.tiva-events-calendar').attr('data-source') != "undefined") ? jQuery('.tiva-events-calendar').attr('data-source') : 'json';
 	if (source == 'json') { // Get events from json file : events/events.json
-		debugger;
 		jQuery.getJSON( events_json, function( data ) {
 			for (var i = 0; i < data.items.length; i++) {
 				var event_date = new Date(data.items[i].year, Number(data.items[i].month) - 1, data.items[i].day);
