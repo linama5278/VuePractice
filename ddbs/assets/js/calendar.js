@@ -141,11 +141,11 @@ function n_createCalendar(layout, n_firstDay, n_numbDays, n_monthNum, n_yearNum)
 		n_calendarString += '<td class=\"calendar-btn\"><span onClick=\"n_changedate(\'nextmo\', \'full\')\"><span class="btn-change-date">' + n_next_month + '<\/span> »<\/span><\/td>';
 		n_calendarString += '<td class=\"calendar-btn\"><span onClick=\"n_changedate(\'nextyr\', \'full\')\"><span class="btn-change-date">' + n_next_year + '<\/span> »<\/span><\/td>';
 	} else {
-		n_calendarString += '<td class=\"calendar-btn\"><span onClick=\"n_changedate(\'prevyr\', \'compact\')\">«<\/span><\/td>';
-		n_calendarString += '<td class=\"calendar-btn\"><span onClick=\"n_changedate(\'prevmo\', \'compact\')\">«<\/span><\/td>';
+		n_calendarString += '<td class=\"calendar-btn\" onClick=\"n_changedate(\'prevyr\', \'compact\')\"><span style="font-size:1.45em;">«<\/span><\/td>';
+		n_calendarString += '<td class=\"calendar-btn\" onClick=\"n_changedate(\'prevmo\', \'compact\')\"><span style="font-size:1.45em;">‹<\/span><\/td>';
 		n_calendarString += '<td class=\"calendar-title\" colspan=\"3\"><span>' + n_wordMonth[n_monthNum - 1] + '&nbsp;&nbsp;' + n_yearNum + '<\/span><\/td>';
-		n_calendarString += '<td class=\"calendar-btn\"><span onClick=\"n_changedate(\'nextmo\', \'compact\')\">»<\/span><\/td>';
-		n_calendarString += '<td class=\"calendar-btn\"><span onClick=\"n_changedate(\'nextyr\', \'compact\')\">»<\/span><\/td>';
+		n_calendarString += '<td class=\"calendar-btn\" onClick=\"n_changedate(\'nextmo\', \'compact\')\"><span style="font-size:1.45em;">›<\/span><\/td>';
+		n_calendarString += '<td class=\"calendar-btn\" onClick=\"n_changedate(\'nextyr\', \'compact\')\"><span style="font-size:1.45em;">»<\/span><\/td>';
 	}
 	n_calendarString += '<\/tr>';
 	
