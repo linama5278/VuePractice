@@ -4222,7 +4222,7 @@ fieldset:disabled a.btn {
 .table tbody th {
   font-size: 0.8125rem;
   font-weight: 400;
-  height: 3rem;
+  /*height: 3rem;*/
   padding-top: 0.919643rem;
   padding-bottom: 0.919643rem;
 }
