@@ -133,9 +133,9 @@ function createCalendar(layout, firstDay, numbDays, monthNum, yearNum) {
 	calendarString += '<tr>';
 	if (layout == 'full') {
 		calendarString += '<td class=\"calendar-btn\"><span onClick=\"changedate(\'prevyr\', \'full\')\">« <span class="btn-change-date">' + prev_year + '<\/span><\/span><\/td>';
-		calendarString += '<td class=\"calendar-btn\"><span onClick=\"changedate(\'prevmo\', \'full\')\">« <span class="btn-change-date">' + prev_month + '<\/span><\/span><\/td>';
+		calendarString += '<td class=\"calendar-btn\"><span onClick=\"changedate(\'prevmo\', \'full\')\">‹ <span class="btn-change-date">' + prev_month + '<\/span><\/span><\/td>';
 		calendarString += '<td class=\"calendar-title\" colspan=\"3\"><span><i class=\"fa fa-calendar-o\"><\/i>' + yearNum + '年&nbsp;' + wordMonth[monthNum - 1] + '<\/span><\/td>';
-		calendarString += '<td class=\"calendar-btn\"><span onClick=\"changedate(\'nextmo\', \'full\')\"><span class="btn-change-date">' + next_month + '<\/span> »<\/span><\/td>';
+		calendarString += '<td class=\"calendar-btn\"><span onClick=\"changedate(\'nextmo\', \'full\')\"><span class="btn-change-date">' + next_month + '<\/span> ›<\/span><\/td>';
 		calendarString += '<td class=\"calendar-btn\"><span onClick=\"changedate(\'nextyr\', \'full\')\"><span class="btn-change-date">' + next_year + '<\/span> »<\/span><\/td>';
 	} else {
 		calendarString += '<td class=\"calendar-btn\" onClick=\"changedate(\'prevyr\', \'compact\')\"><span style="font-size:1.45em;">«<\/span><\/td>';
@@ -423,7 +423,7 @@ function showEventList(layout, max_events) {
 					var event_day = wordDay[6];
 				}
 			}
-			var event_date = wordMonth[Number(tiva_list_events[i].month) - 1] + ' ' + tiva_list_events[i].day + ', ' + tiva_list_events[i].year;
+			var event_date = tiva_list_events[i].year + '年' + wordMonth[Number(tiva_list_events[i].month) - 1] + tiva_list_events[i].day + '日';
 			
 			// End date
 			var event_end_time = '';
@@ -485,7 +485,7 @@ function showEventList(layout, max_events) {
 					var event_day = wordDay[6];
 				}
 			}
-			var event_date = wordMonth[Number(tiva_list_events[i].month) - 1] + ' ' + tiva_list_events[i].day + ', ' + tiva_list_events[i].year;
+			var event_date = tiva_list_events[i].year + '年' + wordMonth[Number(tiva_list_events[i].month) - 1] + tiva_list_events[i].day + '日';
 			
 			// End date
 			var event_end_time = '';
@@ -554,7 +554,7 @@ function showEventDetail(id, layout, day, month, year) {
 				var event_day = wordDay[6];
 			}
 		}
-		var event_date = wordMonth[Number(tiva_events[id].month) - 1] + ' ' + tiva_events[id].day + ', ' + tiva_events[id].year;
+		var event_date = tiva_events[id].year + '年' + wordMonth[Number(tiva_events[id].month) - 1] + tiva_events[id].day + '日';
 		
 		// End date
 		var event_end_time = '';
@@ -631,7 +631,7 @@ function showEventDetail(id, layout, day, month, year) {
 						var event_day = wordDay[6];
 					}
 				}
-				var event_date = wordMonth[Number(tiva_events[events[i].id].month) - 1] + ' ' + tiva_events[events[i].id].day + ', ' + tiva_events[events[i].id].year;
+				var event_date = tiva_events[events[i].id].year + '年' + wordMonth[Number(tiva_events[events[i].id].month) - 1] + tiva_events[events[i].id].day + '日';
 				
 				// End date
 				var event_end_time = '';

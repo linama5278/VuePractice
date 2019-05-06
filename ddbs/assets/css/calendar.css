@@ -156,9 +156,9 @@
 .calendar-day-event .tiva-event-tooltip {
 	position: absolute;
     z-index: 9999;
-    width: 180px;
+    width: 100px;
     left: 50%;
-	margin: 0 0 0 -100px;
+	margin: 0 0 0 -65px;
     bottom: 35px;
     background: #f5f5f5;
     opacity: 0;
