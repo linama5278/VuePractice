@@ -344,6 +344,7 @@ function showTooltip(id, layout, day, month, year, el) {
 		var count = jQuery(el).parent().find('.calendar-event-name').length;
 		var bottom = 32 + ((count - index - 1) * 25);
 		jQuery(el).parent().find('.tiva-event-tooltip').css('bottom', bottom + 'px');
+		jQuery(el).parent().find('.tiva-event-tooltip').css('left', '-10px');
 		
 		jQuery(el).parent().find('.tiva-event-tooltip').html(	'<div class="event-tooltip-item">'
 																+ event_time
@@ -791,7 +792,7 @@ jQuery(document).ready(function(){
 			dataType: 'json',
 			data: '',
 			beforeSend : function(){
-				jQuery('.tiva-calendar').html('<div class="loading"><img src="assets/images/loading.gif" /></div>');
+				jQuery('.tiva-calendar').html('<div class="loading"><img src="calendar/images/loading.gif" /></div>');
 			},
 			success: function(data) {
 				for (var i = 0; i < data.length; i++) {

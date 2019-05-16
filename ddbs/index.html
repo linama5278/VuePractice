@@ -1,96 +1,140 @@
 ﻿<html>
 	<head>
-	<meta charset="UTF-8">
+		<meta charset="UTF-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<title>Dan Dan Barber Shop</title>
-	</head>
-	<!-- CSS -->
-    <!-- Add Material CSS, replace Bootstrap CSS -->
-    <link href="material/css/material.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+		<title>Dan Dan Barber Shop</title>
+		<!-- CSS -->
+		<!-- Add Material CSS, replace Bootstrap CSS -->
+		<link href="material/css/material.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+		
+		<!-- Include events calendar css file -->
+		<link rel="stylesheet" href="calendar/css/font-awesome.min.css">
+		<link rel="stylesheet" href="calendar/css/calendar.css">
+		<link rel="stylesheet" href="calendar/css/calendar_full.css">
+		<link rel="stylesheet" href="calendar/css/calendar_compact.css">
 	
-	<!-- Include events calendar css file -->
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/calendar.css">
-	<link rel="stylesheet" href="assets/css/calendar_full.css">
-	<link rel="stylesheet" href="assets/css/calendar_compact.css">
-
-	<link rel="icon" type="image/png" href="Danicon.png" />
-	<style>
-		body {
-			margin: 0;
-			font-family: 'Noto Sans TC', sans-serif;
-			background: linear-gradient(to right, #f7e7f7 0%,#e3e1fb 100%);
-		}
-		.header {
-			width:  100%;
-			height: 200px;
-			background-image: url("images/header.png");
-			background-repeat:no-repeat;
-			background-size:cover;
-			background-position:center;
-		}
-		.slide-content {
-			background-color: #cacaca;
-			height: 120px;
-			width: 100vw;
-			display: block;
-		}
-		.slide-content h2 {
-			color: #2a2a2a;
-			font-weight: bold;
-			text-align: center;
-			display:inline;
-		}
-		.center {
-			text-align: center;
-		}
-		#back {
-			position: fixed;
-			left: .6em;
-			top: .6em;
-			font-size: 1.15em;
-			z-index: 99;
-		}
-		.back-button {
-			background-color: rgba(255, 255, 255, 0.3);
-    		border: 0;
-			color: #777777;
-			font-weight: 600;
-			padding: 6px 12px;
-			cursor: pointer;
-    		user-select: none;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-		}
-		.back-button:active {
-			background-color: rgba(202, 196, 235, 0.4);
-    		background-image: none;
-			-webkit-tap-highlight-color: transparent;
-			-webkit-transition: .3s ease-out;
-			transition: .3s ease-out;
-		}
-		.back-button:focus {
-  			outline: none;
-		}
-		.info-block {
-			display: none;
-		}
-		.gradient {
-			background: -webkit-linear-gradient(right top,#ff4081, #9c27b0);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-	</style>
+		<link rel="icon" type="image/png" href="images/style/icon.png" />
+		<style>
+			body {
+				margin: 0;
+				font-family: 'Noto Sans TC', sans-serif;
+				background: linear-gradient(to right, #f7e7f7 0%,#e3e1fb 100%);
+			}
+			.header {
+				width:  100%;
+				height: 200px;
+				background-image: url("images/style/header.png");
+				background-repeat:no-repeat;
+				background-size:cover;
+				background-position:center;
+			}
+			.slide-content {
+				background-color: #cacaca;
+				height: 120px;
+				width: 100vw;
+				display: block;
+			}
+			.slide-content h2 {
+				color: #2a2a2a;
+				font-weight: bold;
+				text-align: center;
+				display:inline;
+			}
+			.center {
+				text-align: center;
+			}
+			#back {
+				position: fixed;
+				left: .6em;
+				top: .6em;
+				font-size: 1.15em;
+				z-index: 99;
+			}
+			.back-button {
+				background-color: rgba(255, 255, 255, 0.3);
+				border: 0;
+				color: #777777;
+				font-weight: 600;
+				padding: 6px 12px;
+				cursor: pointer;
+				user-select: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+			}
+			.back-button:active {
+				background-color: rgba(202, 196, 235, 0.4);
+				background-image: none;
+				-webkit-tap-highlight-color: transparent;
+				-webkit-transition: .3s ease-out;
+				transition: .3s ease-out;
+			}
+			.back-button:focus {
+				  outline: none;
+			}
+			.navmenu {
+				float: left;
+				position: fixed;
+				top: 1em;
+				left: 1em;
+				z-index: 100;
+			}
+			.translate {
+				float: right;
+				position: absolute;
+				top: 1em;
+				right: 1em;
+			}
+			.info-block {
+				display: none;
+			}
+			.gradient {
+				background: -webkit-linear-gradient(right top,#ff4081, #9c27b0);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			.rounded-img {
+				border-radius: 18px;
+				height: 36px;
+				width: 36px;
+				margin-right: 0.5em
+			}
+		</style>
+	</head>
 	<body>
-		<div class="header"></div>
-		<div id="content">
-			<div id="back" v-if="headnav">
-				<button type="button" @click="ShowDiv('main')" class="back-button">
-					<i class="fas fa-chevron-left"></i> 返回
+		<div id="container">
+		<div class="header">
+			<button data-target="#myNavdrawer" data-toggle="navdrawer" type="button" class="btn btn-float btn-light btn-sm navmenu">
+				<i class="fas fa-bars"></i>
+			</button>
+			<div class="btn-float-dropdown dropdown">
+				<button aria-expanded="false" aria-haspopup="true" class="btn btn-float btn-primary btn-sm translate" data-toggle="dropdown" type="button">
+					<i class="fas fa-language"></i>
 				</button>
+				<div class="dropdown-menu">
+					<button class="btn btn-float btn-secondary btn-sm" type="button" data-toggle="tooltip" data-placement="left" title="中文(台灣)" @click="ChangeLang('zh-tw')">中</button>
+					<button class="btn btn-float btn-secondary btn-sm" type="button" data-toggle="tooltip" data-placement="left" title="中文(台語)" @click="ChangeLang('zh-mn')">台</button>
+					<button class="btn btn-float btn-secondary btn-sm" type="button" data-toggle="tooltip" data-placement="left" title="English" @click="ChangeLang('en')"><i class="fab fa-etsy"></i></button>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div aria-hidden="true" class="navdrawer" id="myNavdrawer" tabindex="-1">
+				<div class="navdrawer-content">
+					<div class="navdrawer-header">
+						<a class="navbar-brand px-0" href="#" @click="ShowDiv('main')"><img src="images/style/icon.png" class="rounded-img">阿丹家庭美髮</a>
+					</div>
+					<nav class="navdrawer-nav">
+						<a class="nav-item nav-link" href="#" @click="ShowDiv('calendar')"><i class="fas fa-calendar-plus"></i> {{ Calender }}</a>
+						<a class="nav-item nav-link" href="#" @click="ShowDiv('phone')"><i class="fas fa-phone"></i> {{ Contact }}</a>
+						<a class="nav-item nav-link" href="#" @click="ShowDiv('maps')"><i class="fas fa-map-marked-alt"></i> {{ Maps }}</a>
+						<a class="nav-item nav-link" href="#" @click="ShowDiv('intro')"><i class="fas fa-store"></i> {{ Introduce }}</a>
+						<a class="nav-item nav-link" href="#" @click="ShowDiv('instagram')"><i class="fab fa-instagram"></i> {{ Instagram }}</a>
+						<a class="nav-item nav-link" href="#" @click="ShowDiv('fqa')"><i class="fas fa-question-circle"></i> {{ FQA }}</a>
+					</nav>
+				</div>
 			</div>
 			<div id="main" class="info-block">
 				<div id="carousel-img" class="carousel slide carousel-fade" data-ride="carousel">
@@ -343,6 +387,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</body>
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -353,16 +398,16 @@
 	
     <!-- Then Material JavaScript on top of Bootstrap JavaScript -->
 	<script src="material/js/material.min.js"></script>
-	<script src="btn-grp.js"></script>
+	<script src="scripts/lang.js"></script>
 	
 	<!-- Include config file -->
-	<script src="assets/config/config.js"></script>
+	<script src="calendar/config/config.js"></script>
 	
 	<!-- Include events calendar language file -->
-	<script src="assets/languages/zh-tw.js"></script>
+	<script src="calendar/languages/zh-tw.js"></script>
 
 	<!-- Include events calendar js file -->
-	<script src="assets/js/calendar.js"></script>
+	<script src="calendar/js/calendar.js"></script>
 	<script>
 		$(function(){
 			$('#carousel-img').carousel({
@@ -372,9 +417,10 @@
 				interval: 6000
 			});
 			$('#main').show();
+			$('[data-toggle="tooltip"]').tooltip();
 		});
 		new Vue({
-			el: '#content',
+			el: '#container',
 			data: {
 				headnav: false,
 				Calender: "行事曆",
@@ -390,6 +436,21 @@
 					$('#' + div).fadeIn();
 					if (div != 'main') { this.headnav = true; }
 					else { this.headnav = false; }
+					$('#myNavdrawer').navdrawer('hide');
+				},
+				ChangeLang: function(output) {
+					var lang = "";
+					if (output == null) {
+						lang = "zh-tw";
+					}else {
+						lang = output;
+					}
+					this.Calender = menulang[lang].Calender;
+					this.Contact = menulang[lang].Contact;
+					this.Maps = menulang[lang].Map;
+					this.Introduce = menulang[lang].Introduce;
+					this.Instagram = menulang[lang].Instagram;
+					this.FQA = menulang[lang].FQA;
 				}
 			}
 		});

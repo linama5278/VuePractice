@@ -1,4 +1,4 @@
-const btngrp = {
+const menulang = {
   "zh-tw": {
     "Calender": "行事曆",
     "Contact": "電話",
@@ -20,7 +20,7 @@ const btngrp = {
     "Contact": "卡等喂",
     "Map": "挖底家",
     "Introduce": "無欸某",
-    "Instagram": "埃　基",
+    "Instagram": "埃基",
     "FQA": "悶代誌"
   }
 }
