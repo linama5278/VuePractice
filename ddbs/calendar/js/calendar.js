@@ -538,7 +538,7 @@ function showEventDetail(id, layout, day, month, year) {
 	jQuery('.tiva-events-calendar.' + layout + ' .back-calendar').show();
 	jQuery('.tiva-events-calendar.' + layout + ' .tiva-calendar').hide();
 	jQuery('.tiva-events-calendar.' + layout + ' .tiva-event-list').hide();
-	jQuery('.tiva-events-calendar.' + layout + ' .tiva-event-detail').fadeIn(1500);
+	jQuery('.tiva-events-calendar.' + layout + ' .tiva-event-detail').fadeIn(300);
 	
 	jQuery('.tiva-events-calendar.' + layout + ' .list-view').removeClass('active');
 	jQuery('.tiva-events-calendar.' + layout + ' .calendar-view').removeClass('active');
@@ -831,7 +831,7 @@ jQuery(document).ready(function(){
 		jQuery(this).parents('.tiva-events-calendar').find('.back-calendar').hide();
 		jQuery(this).parents('.tiva-events-calendar').find('.tiva-event-list').hide();
 		jQuery(this).parents('.tiva-events-calendar').find('.tiva-event-detail').hide();
-		jQuery(this).parents('.tiva-events-calendar').find('.tiva-calendar').fadeIn(1500);
+		jQuery(this).parents('.tiva-events-calendar').find('.tiva-calendar').fadeIn(300);
 		
 		jQuery(this).parents('.tiva-events-calendar').find('.list-view').removeClass('active');
 		jQuery(this).parents('.tiva-events-calendar').find('.calendar-view').addClass('active');
@@ -842,7 +842,7 @@ jQuery(document).ready(function(){
 		jQuery(this).parents('.tiva-events-calendar').find('.back-calendar').hide();
 		jQuery(this).parents('.tiva-events-calendar').find('.tiva-calendar').hide();
 		jQuery(this).parents('.tiva-events-calendar').find('.tiva-event-detail').hide();
-		jQuery(this).parents('.tiva-events-calendar').find('.tiva-event-list').fadeIn(1500);
+		jQuery(this).parents('.tiva-events-calendar').find('.tiva-event-list').fadeIn(300);
 		
 		jQuery(this).parents('.tiva-events-calendar').find('.calendar-view').removeClass('active');
 		jQuery(this).parents('.tiva-events-calendar').find('.list-view').addClass('active');
@@ -863,12 +863,12 @@ jQuery(document).ready(function(){
 		
 		var initial_view = (typeof jQuery(this).parents('.tiva-events-calendar').attr('data-view') != "undefined") ? jQuery(this).parents('.tiva-events-calendar').attr('data-view') : 'calendar';
 		if (initial_view == 'calendar') {
-			jQuery(this).parents('.tiva-events-calendar').find('.tiva-calendar').fadeIn(1500);
+			jQuery(this).parents('.tiva-events-calendar').find('.tiva-calendar').fadeIn(300);
 			
 			jQuery(this).parents('.tiva-events-calendar').find('.list-view').removeClass('active');
 			jQuery(this).parents('.tiva-events-calendar').find('.calendar-view').addClass('active');
 		} else {
-			jQuery(this).parents('.tiva-events-calendar').find('.tiva-event-list').fadeIn(1500);
+			jQuery(this).parents('.tiva-events-calendar').find('.tiva-event-list').fadeIn(300);
 			
 			jQuery(this).parents('.tiva-events-calendar').find('.calendar-view').removeClass('active');
 			jQuery(this).parents('.tiva-events-calendar').find('.list-view').addClass('active');

@@ -127,12 +127,12 @@
 						<a class="navbar-brand px-0" href="#" @click="ShowDiv('main')"><img src="images/style/icon.png" class="rounded-img">阿丹家庭美髮</a>
 					</div>
 					<nav class="navdrawer-nav">
-						<a class="nav-item nav-link" href="#" @click="ShowDiv('calendar')"><i class="fas fa-calendar-plus"></i> {{ Calender }}</a>
-						<a class="nav-item nav-link" href="#" @click="ShowDiv('phone')"><i class="fas fa-phone"></i> {{ Contact }}</a>
-						<a class="nav-item nav-link" href="#" @click="ShowDiv('maps')"><i class="fas fa-map-marked-alt"></i> {{ Maps }}</a>
-						<a class="nav-item nav-link" href="#" @click="ShowDiv('intro')"><i class="fas fa-store"></i> {{ Introduce }}</a>
-						<a class="nav-item nav-link" href="#" @click="ShowDiv('instagram')"><i class="fab fa-instagram"></i> {{ Instagram }}</a>
-						<a class="nav-item nav-link" href="#" @click="ShowDiv('fqa')"><i class="fas fa-question-circle"></i> {{ FQA }}</a>
+						<a class="nav-item nav-link" href="#" id="navcalendar" @click="ShowDiv('calendar')"><i class="fas fa-calendar-plus"></i> {{ Calender }}</a>
+						<a class="nav-item nav-link" href="#" id="navphone" @click="ShowDiv('phone')"><i class="fas fa-phone"></i> {{ Contact }}</a>
+						<a class="nav-item nav-link" href="#" id="navmaps" @click="ShowDiv('maps')"><i class="fas fa-map-marked-alt"></i> {{ Maps }}</a>
+						<a class="nav-item nav-link" href="#" id="navintro" @click="ShowDiv('intro')"><i class="fas fa-store"></i> {{ Introduce }}</a>
+						<a class="nav-item nav-link" href="#" id="navinstagram" @click="ShowDiv('instagram')"><i class="fab fa-instagram"></i> {{ Instagram }}</a>
+						<a class="nav-item nav-link" href="#" id="navfqa" @click="ShowDiv('fqa')"><i class="fas fa-question-circle"></i> {{ FQA }}</a>
 					</nav>
 				</div>
 			</div>
@@ -437,6 +437,8 @@
 					if (div != 'main') { this.headnav = true; }
 					else { this.headnav = false; }
 					$('#myNavdrawer').navdrawer('hide');
+					$('.navdrawer-nav').children().removeClass('active');
+					$('#nav' + div).addClass('active');
 				},
 				ChangeLang: function(output) {
 					var lang = "";
