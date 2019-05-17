@@ -7,7 +7,7 @@
 		<!-- Add Material CSS, replace Bootstrap CSS -->
 		<link href="material/css/material.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+		<link rel="stylesheet" href="style/main.css">
 		
 		<!-- Include events calendar css file -->
 		<link rel="stylesheet" href="calendar/css/font-awesome.min.css">
@@ -16,98 +16,6 @@
 		<link rel="stylesheet" href="calendar/css/calendar_compact.css">
 	
 		<link rel="icon" type="image/png" href="images/style/icon.png" />
-		<style>
-			@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
-			body {
-				margin: 0;
-				font-family: 'Noto Sans TC', sans-serif;
-				background: linear-gradient(to right, #f7e7f7 0%,#e3e1fb 100%);
-			}
-			.header {
-				width:  100%;
-				height: 200px;
-				background-image: url("images/style/header.png");
-				background-repeat:no-repeat;
-				background-size:cover;
-				background-position:center;
-				font-family: ‘cwTeXYen’, sans-serif;
-			}
-			.slide-content {
-				background-color: #cacaca;
-				height: 120px;
-				width: 100vw;
-				display: block;
-			}
-			.slide-content h2 {
-				color: #2a2a2a;
-				font-weight: bold;
-				text-align: center;
-				display:inline;
-			}
-			.center {
-				text-align: center;
-			}
-			#back {
-				position: fixed;
-				left: .6em;
-				top: .6em;
-				font-size: 1.15em;
-				z-index: 99;
-			}
-			.back-button {
-				background-color: rgba(255, 255, 255, 0.3);
-				border: 0;
-				color: #777777;
-				font-weight: 600;
-				padding: 6px 12px;
-				cursor: pointer;
-				user-select: none;
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-			}
-			.back-button:active {
-				background-color: rgba(202, 196, 235, 0.4);
-				background-image: none;
-				-webkit-tap-highlight-color: transparent;
-				-webkit-transition: .3s ease-out;
-				transition: .3s ease-out;
-			}
-			.back-button:focus {
-				  outline: none;
-			}
-			.navmenu {
-				float: left;
-				position: fixed;
-				top: 1em;
-				left: 1em;
-				z-index: 100;
-			}
-			.translate {
-				float: right;
-				position: absolute;
-				top: 1em;
-				right: 1em;
-			}
-			.info-block {
-				display: none;
-			}
-			.gradient {
-				background: -webkit-linear-gradient(right top,#ff4081, #9c27b0);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-			.rounded-img {
-				border-radius: 18px;
-				height: 36px;
-				width: 36px;
-				margin-right: 0.5em
-			}
-			.price {
-				float: right;
-				margin-right: 2rem;
-			}
-		</style>
 	</head>
 	<body>
 		<div id="container">
@@ -152,7 +60,7 @@
 							<img class="d-block w-100" src="images/slieds/slied-12483107.jpg" alt="店內">
 						</div>
 						<div class="carousel-item">
-							<img class="d-block w-100" src="images/slieds/slied-12864180.jpg" alt="Third slide">
+							<img class="d-block w-100" src="images/slieds/slied-12864180.jpg" alt="形象">
 						</div>
 					</div>
 				</div>
@@ -331,63 +239,64 @@
 					<div class="card">
 						<div class="card-header" id="headingOne">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-								Q: 如果沒有預約，是否可以洗頭(做頭髮)？
+								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+									<i class="fab fa-quora"></i>: 如果沒有預約，是否可以洗頭(做頭髮)？
 								</button>
 							</h5>
 						</div>
 						<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 							<div class="card-body">
-								這個問題問得真好，<br />
-								老闆如果在店裡會接告知您是否可以做，<br />
-								如果老闆不在店，您最好以電話預約，<br />
-								以免延誤您的時間，深感抱歉。
+								<blockquote class="blockquote ml-4 small">
+									老闆如果在店裡會接告知您是否可以接，如果老闆不在店，您最好以電話預約，以免延誤您的時間，深感抱歉。
+								</blockquote>
 							</div>
 						</div>
 					</div>
 					<div class="card">
 						<div class="card-header" id="headingTwo">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								Q: 因為我是開車，你們巷子裡面可以停車嗎？
+								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									<i class="fab fa-quora"></i>: 因為我是開車，你們巷子裡面可以停車嗎？
 								</button>
 							</h5>
 						</div>
 						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 							<div class="card-body">
-								因為是3米路，<br />
-								建議盡量騎機車或步行，<br />
-								倘若您真的需要開車，<br />
-								可停千禧公園周邊或其他巷弄，<br />
-								盡量不要影響道路通暢，造成不便請見諒，謝謝配合。<br />
+								<blockquote class="blockquote ml-4 small">
+									因為是3米路，建議盡量騎機車或步行；倘若您要開車，可停千禧公園周邊或其他巷弄，盡量不要影響道路通暢，造成不便請見諒，謝謝配合。
+								</blockquote>
 							</div>
 						</div>
 					</div>
 					<div class="card">
 						<div class="card-header" id="headingThree">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								Q: 小朋友剪頭髮或洗頭髮，費用會比較高嗎？
+								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									<i class="fab fa-quora"></i>: 小朋友剪頭髮或洗頭髮，費用會比較高嗎？
 								</button>
 							</h5>
 						</div>
 						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
 							<div class="card-body">
-								不會，請父母放心，有需要的話可以來電詢問。
+								<blockquote class="blockquote ml-4 small">
+									不會，請父母放心，有需要的話可以來電詢問。
+								</blockquote>
 							</div>
 						</div>
 					</div>
 					<div class="card">
 						<div class="card-header" id="headingFour">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-								Q: 店內提供Wi-Fi？
+								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+									<i class="fab fa-quora"></i>: 店內提供Wi-Fi(無線網路)？
 								</button>
 							</h5>
 						</div>
 						<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
 							<div class="card-body">
-								有，如有需要使用可以詢問老闆。
+								<blockquote class="blockquote ml-4 small">
+									有，如有需要使用可以詢問老闆。
+								</blockquote>
 							</div>
 						</div>
 					</div>
