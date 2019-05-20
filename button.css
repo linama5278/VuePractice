@@ -1,5 +1,14 @@
-body{
-    font-family: sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Ubuntu&display=swap);
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+::selection {
+	background: #42b983;
+	color: #fcfcfc;
+}
+::-moz-selection {
+	background: #42b983;
+	color: #fcfcfc;
 }
 button {
     font-size: 1.2em;
@@ -14,6 +23,10 @@ button:active {
 }
 input {    
     font-size: 1.2em;
+    border: 0 solid #fff;
+    background-color: transparent;
+    border-bottom: 2px solid #2fbd8e;
+    padding: 3px;
 }
 select {
     font-size: 1.2em;
@@ -21,4 +34,8 @@ select {
     border-bottom: 2px solid #2fbd8e;
     background-color: transparent;
     padding: 6px;
+}
+.todo {
+    list-style-type: circle;
+    font-size: 1.2em;
 }

@@ -10,31 +10,42 @@
 </head>
 <body>
     <div id="list">
+        <h1>List(Pop, Shift, Splice)</h1>
         <ul>
             <li v-for="value in list">{{value}}</li>
         </ul>
-        <button @click="killPeople">殺掉一個</button>
+        <button @click="ShiftPeople">Kill the first</button>
+        <button @click="PopPeople">Kill the last</button>
+        <button @click="RandomPeople">Kill Random</button>
     </div>
     <script>
         new Vue({
             el:'#list',
             data: {
                 list: [
-                    'Agong',
-                    'Ama',
-                    'Aba',
-                    'Amu',
-                    'Abe',
-                    'Amun',
-                    'GoGo',
-                    'JJ',
-                    'DD',
-                    'meimei'
+                    'Grandfather',
+                    'Grandmother',
+                    'Father',
+                    'Mother',
+                    'Uncle',
+                    'Aunt',
+                    'Bother',
+                    'Sister',
+                    'Cousin',
+                    'Me'
                 ]
             },
             methods: {
-                killPeople(){
+                PopPeople(){
                     this.list.pop();
+                },
+                ShiftPeople(){
+                    this.list.shift();
+                },
+                RandomPeople(){
+                    var c =  this.list.length - 1;
+                    var r = Math.floor(Math.random() * c);
+                    this.list.splice(r, 1);
                 }
             }
         });

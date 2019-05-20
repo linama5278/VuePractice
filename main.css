@@ -3,6 +3,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
 }
+::selection {
+	background: #42b983;
+	color: #fcfcfc;
+}
+::-moz-selection {
+	background: #42b983;
+	color: #fcfcfc;
+}
 header {
     display: block;
     width: 20%;

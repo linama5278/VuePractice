@@ -15,19 +15,26 @@
 			});
 		});
 	</script>
+	<link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
 	<style>
+		body {
+			font-family: 'Kosugi Maru', sans-serif;
+		}
 		table {
-			border: 1px solid #435466;
+			border: 0px solid #ffffff;
+    		border-collapse:collapse;
 			border-spacing: 0;
 			background: linear-gradient(to bottom, rgba(255,255,255,0.99) 0%,rgba(255,255,255,0.6) 100%),url("vue.png") no-repeat center 40%;
 			overflow: hidden;
+			cursor: default;
 		}
 		tr:first-child, td:first-child {
+			color: #435466;
 			font-weight: 700;
 			background-color: #e7f5ef;
 		}
 		tr, td {
-			border: 1px solid #435466;
+			border: 1px dotted #42b983;
 			text-align: center;
 			width: 35px;
 			height: 30px;
@@ -37,8 +44,8 @@
         }
 		td:hover {
             background-color: #435466;
-            color: #e7f5ef;
-            font-weight: 900;
+			color: #e7f5ef;
+			text-shadow: 1px 1px 3px #d0eddf, -1px -1px 3px #d0eddf;
         }
 		td {
 			position: relative;

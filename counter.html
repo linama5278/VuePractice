@@ -12,15 +12,15 @@
 
 <body>
     <div id='counter'>
-        <h1>{{count}}</h1>
-        <button v-on:click="resetCount">reset</button>　
+        <h1>Click Counter: {{count}}</h1>　
         <button v-on:click="addCount">+1</button>
         <button v-on:click="accCount">+{{i}}</button>
+        <button v-on:click="resetCount">reset</button>
     </div>
     <p></p>
     <div id='look'>
-        <button v-on:click="toggle">Toggle</button>
-        <h1 v-if="show">Hello World!!</h1>
+        <button v-on:click="toggle" style="float:left;">{{symbol}}</button>
+        <h1 v-if="show">&nbsp;Hello World!!</h1>
     </div>
 
     <script>
@@ -48,11 +48,13 @@
         new Vue({
             el: '#look',
             data: {
-                show: true, 
+                show: true,
+                symbol: "-"
             },
             methods: {
                 toggle(){
                     this.show = !this.show;
+                    this.show ? this.symbol = '-' : this.symbol = "+";
                 }
             },
         });
