@@ -38,7 +38,7 @@
 			<div aria-hidden="true" class="navdrawer" id="myNavdrawer" tabindex="-1">
 				<div class="navdrawer-content">
 					<div class="navdrawer-header">
-						<a class="navbar-brand px-0" href="#" @click="ShowDiv('main')"><img src="images/style/icon.png" class="rounded-img">阿丹家庭美髮</a>
+						<a class="navbar-brand px-0" href="#" @click="ShowDiv('main')"><img src="images/style/icon.png" class="rounded-img">{{title}}</a>
 					</div>
 					<nav class="navdrawer-nav">
 						<a class="nav-item nav-link" href="#" id="navcalendar" @click="ShowDiv('calendar')"><i class="fas fa-calendar-plus"></i> {{ Calender }}</a>
@@ -111,7 +111,7 @@
 							</button>
 						</div>
 						<div class="col-4 center">
-							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('fqa')">
+							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('reservation')">
 								<h2><i class="fas fa-question-circle gradient"></i></h2>
 								{{ FQA }}
 							</button>
@@ -302,6 +302,48 @@
 					</div>
 				</div>
 			</div>
+			<div id="reservation" class="info-block">
+				<div class="container mt-3">
+					<div class="card">
+						<img class="card-img-top" src="images/slieds/slied-12483107.jpg" alt="Card image cap">
+						<div class="card-body">
+							<form>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<label class="input-group-text" for="worktype">服務項目</label>
+									</div>
+									<select id="worktype" class="custom-select">
+										<option selected>請選擇</option>
+										<option value="2_01">洗髮</option>
+										<option value="1_03">理髮</option>
+										<option value="4_05">染髮</option>
+										<option value="3_02">燙髮</option>
+										<option value="5_00">護髮</option>
+										<option value="5_04">修指甲</option>
+										<option value="6_06">做造型</option>
+										<option value="5_00">其他項目</option>
+									</select>
+								</div>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<label class="input-group-text" for="reservedDate">日期</label>
+									</div>
+									<input type="date" class="form-control" id="reservedDate">
+								</div>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<label class="input-group-text" for="reservedTime">時間</label>
+									</div>
+									<input type="time" class="form-control" id="reservedTime">
+								</div>
+								<div style="float:right">
+									<button type="submit" class="mt-3 btn btn-primary btn-lg">送出</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	</body>
@@ -339,6 +381,7 @@
 			el: '#container',
 			data: {
 				headnav: false,
+				title: "阿丹家庭美髮",
 				Calender: "行事曆",
 				Contact: "電話",
 				Maps: "地址",
@@ -363,6 +406,7 @@
 					}else {
 						lang = output;
 					}
+					this.title = menulang[lang].title;
 					this.Calender = menulang[lang].Calender;
 					this.Contact = menulang[lang].Contact;
 					this.Maps = menulang[lang].Map;

@@ -1,5 +1,6 @@
 const menulang = {
   "zh-tw": {
+    "title": "阿丹家庭美髮",
     "Calender": "行事曆",
     "Contact": "電話",
     "Map": "地址",
@@ -8,6 +9,7 @@ const menulang = {
     "FQA": "問與答"
   },
   "en": {
+    "title": "Dan Dan Barber Shop",
     "Calender": "Calender",
     "Contact": "Contact",
     "Map": "Map",
@@ -16,6 +18,7 @@ const menulang = {
     "FQA": "FQA"
   },
   "zh-mn": {
+    "title": "阿丹家誰桃",
     "Calender": "柚惜乾",
     "Contact": "卡等喂",
     "Map": "挖底家",

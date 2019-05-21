@@ -119,6 +119,9 @@
 .tiva-calendar-full .calendar-event-name.color-5 {
 	background: #ff4081;
 }
+.tiva-calendar-full .calendar-event-name.color-6 {
+	background: #ad58c7;
+}
 .tiva-calendar-full .calendar-event-name.first-day {
 	margin-right: -11px;
 	-moz-border-radius-topright: 0;
