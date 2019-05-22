@@ -20,7 +20,7 @@
 	<body>
 		<div id="container">
 		<div class="header">
-			<button data-target="#myNavdrawer" data-toggle="navdrawer" type="button" class="btn btn-float btn-light btn-sm navmenu">
+			<button data-target="#menunavdrawer" data-toggle="navdrawer" type="button" class="btn btn-float btn-light btn-sm navmenu">
 				<i class="fas fa-bars"></i>
 			</button>
 			<div class="btn-float-dropdown dropdown">
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		<div id="content">
-			<div aria-hidden="true" class="navdrawer" id="myNavdrawer" tabindex="-1">
+			<div aria-hidden="true" class="navdrawer" id="menunavdrawer" tabindex="-1">
 				<div class="navdrawer-content">
 					<div class="navdrawer-header">
 						<a class="navbar-brand px-0" href="#" @click="ShowDiv('main')"><img src="images/style/icon.png" class="rounded-img">{{title}}</a>
@@ -99,7 +99,7 @@
 					</div>
 					<div class="row mt-3 mb-4">
 						<div class="col-4 center">
-							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('intro')">
+							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('reservation')">
 								<h2><i class="fas fa-store gradient"></i></h2>
 								{{ Introduce }}
 							</button>
@@ -111,7 +111,7 @@
 							</button>
 						</div>
 						<div class="col-4 center">
-							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('reservation')">
+							<button type="button" class="btn btn-outline-primary" @click="ShowDiv('fqa')">
 								<h2><i class="fas fa-question-circle gradient"></i></h2>
 								{{ FQA }}
 							</button>
@@ -235,66 +235,66 @@
 				</div>
 			</div>
 			<div id="fqa" class="info-block">
-				<div class="accordion" id="accordionExample">
+				<div class="accordion" id="accFqa">
 					<div class="card">
-						<div class="card-header" id="headingOne">
+						<div class="card-header" id="ques_1">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#coll_1" aria-expanded="false" aria-controls="coll_1">
 									<i class="fab fa-quora"></i>: 如果沒有預約，是否可以洗頭(做頭髮)？
 								</button>
 							</h5>
 						</div>
-						<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+						<div id="coll_1" class="collapse" aria-labelledby="ques_1" data-parent="#accFqa">
 							<div class="card-body">
-								<blockquote class="blockquote ml-4 small">
+								<blockquote class="blockquote ml-4 middle">
 									老闆如果在店裡會接告知您是否可以接，如果老闆不在店，您最好以電話預約，以免延誤您的時間，深感抱歉。
 								</blockquote>
 							</div>
 						</div>
 					</div>
 					<div class="card">
-						<div class="card-header" id="headingTwo">
+						<div class="card-header" id="ques_2">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#coll_2" aria-expanded="false" aria-controls="coll_2">
 									<i class="fab fa-quora"></i>: 因為我是開車，你們巷子裡面可以停車嗎？
 								</button>
 							</h5>
 						</div>
-						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						<div id="coll_2" class="collapse" aria-labelledby="ques_2" data-parent="#accFqa">
 							<div class="card-body">
-								<blockquote class="blockquote ml-4 small">
+								<blockquote class="blockquote ml-4 middle">
 									因為是3米路，建議盡量騎機車或步行；倘若您要開車，可停千禧公園周邊或其他巷弄，盡量不要影響道路通暢，造成不便請見諒，謝謝配合。
 								</blockquote>
 							</div>
 						</div>
 					</div>
 					<div class="card">
-						<div class="card-header" id="headingThree">
+						<div class="card-header" id="ques_3">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#coll_3" aria-expanded="false" aria-controls="coll_3">
 									<i class="fab fa-quora"></i>: 小朋友剪頭髮或洗頭髮，費用會比較高嗎？
 								</button>
 							</h5>
 						</div>
-						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						<div id="coll_3" class="collapse" aria-labelledby="ques_3" data-parent="#accFqa">
 							<div class="card-body">
-								<blockquote class="blockquote ml-4 small">
+								<blockquote class="blockquote ml-4 middle">
 									不會，請父母放心，有需要的話可以來電詢問。
 								</blockquote>
 							</div>
 						</div>
 					</div>
 					<div class="card">
-						<div class="card-header" id="headingFour">
+						<div class="card-header" id="ques_4">
 							<h5 class="mb-0">
-								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								<button class="btn btn-link collapsed text-primary" type="button" data-toggle="collapse" data-target="#coll_4" aria-expanded="false" aria-controls="coll_4">
 									<i class="fab fa-quora"></i>: 店內提供Wi-Fi(無線網路)？
 								</button>
 							</h5>
 						</div>
-						<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+						<div id="coll_4" class="collapse" aria-labelledby="ques_4" data-parent="#accFqa">
 							<div class="card-body">
-								<blockquote class="blockquote ml-4 small">
+								<blockquote class="blockquote ml-4 middle">
 									有，如有需要使用可以詢問老闆。
 								</blockquote>
 							</div>
@@ -396,7 +396,7 @@
 					$('#' + div).fadeIn();
 					if (div != 'main') { this.headnav = true; }
 					else { this.headnav = false; }
-					$('#myNavdrawer').navdrawer('hide');
+					$('#menunavdrawer').navdrawer('hide');
 					$('.navdrawer-nav').children().removeClass('active');
 					$('#nav' + div).addClass('active');
 				},
