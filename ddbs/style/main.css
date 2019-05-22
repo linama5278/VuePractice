@@ -92,8 +92,24 @@ body {
 }
 .card-img-text {
     position: absolute;
-    top: 8rem;
+    top: 7.5rem;
     left: 1.5rem;
-    color: linear-gradient(right top,#ff4081, #9c27b0);
+    background: -webkit-linear-gradient(left top,#f7e7f7, #ffcdd2);
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'cwTeXYen', sans-serif;
+    font-size: 2.1rem;
+    font-weight: bolder;
+}
+.card-img-text:after {
+    background: none;
+    content: attr(data-text);
+    left: 0;
+    top: 0;
+    z-index: -1;
+    position: absolute;
+    text-shadow: 0.5px 0.5px 0 #673ab7, -0.5px -0.5px 0 #673ab7, 1px 1px 2px #e1bee7, -1px -1px 2px #e1bee7;
+}
+.zindex--1 {
+    z-index: -1;
 }
