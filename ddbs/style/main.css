@@ -110,6 +110,6 @@ body {
     position: absolute;
     text-shadow: 0.5px 0.5px 0 #673ab7, -0.5px -0.5px 0 #673ab7, 1px 1px 2px #e1bee7, -1px -1px 2px #e1bee7;
 }
-.zindex--1 {
-    z-index: -1;
+.zindex-1 {
+    z-index: 1;
 }
