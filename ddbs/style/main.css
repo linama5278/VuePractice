@@ -92,13 +92,13 @@ body {
 }
 .card-img-text {
     position: absolute;
-    top: 7.5rem;
+    top: 5.5rem;
     left: 1.5rem;
     background: -webkit-linear-gradient(left top,#f7e7f7, #ffcdd2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'cwTeXYen', sans-serif;
-    font-size: 2.1rem;
+    font-size: 2.3rem;
     font-weight: bolder;
 }
 .card-img-text:after {
