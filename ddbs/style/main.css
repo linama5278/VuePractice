@@ -6,12 +6,12 @@ body {
     background: linear-gradient(to right, #f7e7f7 0%,#e3e1fb 100%);
 }
 ::selection {
-	background: #7b1fa2;
-	color: #e3e1fb;
+	background: #9c27b0;
+	color: #fafafa;
 }
 ::-moz-selection {
-	background: #7b1fa2;
-	color: #e3e1fb;
+	background: #9c27b0;
+	color: #fafafa;
 }
 .header {
     width:  100%;
