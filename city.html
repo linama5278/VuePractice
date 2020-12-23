@@ -37,7 +37,7 @@
             },
             computed: {
                 cities() {
-                    return Object.keys(zipcode);
+                    return Object(zipcode);
                 },
                 areas() {
                     return Object(zipcode[this.selectedCity]);
