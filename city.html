@@ -22,8 +22,8 @@
             props: ['list', 'changed'],
             template: `
             <select @change="changed">
-                <option v-for="city in list">
-                    {{city}}
+                <option v-for="item in list" value="{{item}}">
+                    {{item}}
                 </option>
             </select>
             `,
@@ -40,7 +40,7 @@
                     return Object.keys(zipcode);
                 },
                 areas() {
-                    return Object.keys(zipcode[this.selectedCity].value);
+                    return Object.keys(zipcode[this.selectedCity]);
                 }
             },
             methods: {
