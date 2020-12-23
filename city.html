@@ -40,7 +40,7 @@
                     return Object.keys(zipcode);
                 },
                 areas() {
-                    return Object.keys(zipcode[this.selectedCity]);
+                    return Object.keys(zipcode[this.selectedCity].value);
                 }
             },
             methods: {
