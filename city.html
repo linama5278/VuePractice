@@ -22,7 +22,7 @@
             props: ['list', 'changed'],
             template: `
             <select @change="changed">
-                <option v-for="item in list" value="{{item}}">
+                <option v-for="item in list" :value="{{item}}">
                     {{item}}
                 </option>
             </select>
