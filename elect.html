@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <link rel="stylesheet" href="./button.css" type="text/css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='calc'>
+        <h1>Electricity Cost Calculate</h1>
+        Power consumption:<input type="text" maxlength="5" size="5" v-model="w"/>W(watts)<br >
+        Hours of use per day:<input type="text" maxlength="5" size="5" v-model="t"/><select v-model="d">
+            <option v-for="time in list">
+                {{time}}
+            </option>
+        </select><br >
+        1 kilowatt-hour (kWh) cost: $<input type="text" maxlength="4" size="4" v-model="c"/><br >
+        <button v-on:click="DoCalc">calculate</button>
+        <h3>Electricity cost per day: ${{day}}</h3>
+        <h3>Electricity cost per month: ${{month}}</h3>
+        <h3>Electricity cost two months: ${{months}}</h3>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#calc',
+            data: {
+                w: '',
+                t: '',
+                c: '',
+                d: '',
+                day: '',
+                month: '',
+                months: '',
+                list: ['hr/day', 'min/day']
+            },
+            methods: {
+                DoCalc(){
+                    this.day = this.CalcDay(this.w, this.t, this.c, this.d).toFixed(2);
+                    this.month = this.CalcMonth(this.w, this.t, this.c, this.d).toFixed(2);
+                    this.months = this.CalcMonths(this.w, this.t, this.c, this.d).toFixed(2);
+                },
+                CalcDay(num1, num2, num3, num4){  
+                    return (num4 === 'hr/day') ? num1 / 1000 * num2 * num3 : num1 / 60 / 1000 * num2 * num3 ;
+                },
+                CalcMonth(num1, num2, num3, num4){
+                    return (num4 === 'hr/day') ? num1 / 1000 * num2 * num3 * 30 : num1 / 60 / 1000 * num2 * num3 * 30;
+                },
+                CalcMonths(num1, num2, num3, num4){
+                    return (num4 === 'hr/day') ? num1 / 1000 * num2 * num3 * 60 : num1 / 60 / 1000 * num2 * num3 * 60;
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>
