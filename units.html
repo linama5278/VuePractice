@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <link rel="stylesheet" href="./button.css" type="text/css" />
+    <title>Document</title>
+    <style>.short{ width:2em; }</style>
+</head>
+
+<body>
+    <div id='calc'>
+        <h1>Unit Converter</h1>
+        ft:<input type="text" v-model="l" @keyup="DoCalc" class="short"/>'<input type="text" v-model="inch"@keyup="DoCalc" class="short"/> = {{cm}}cm<br >
+        lb:<input type="text" v-model="w" @keyup="DoCalc"/> = {{kg}}kg<br >
+        mph:<input type="text" v-model="s" @keyup="DoCalc"/> = {{kmh}}kmh<br >
+    </div>
+
+    <script>
+        new Vue({
+            el: '#calc',
+            data: {
+                l: '',
+                inch: '',
+                w: '',
+                s: '',
+                cm: 0,
+                kg: 0,
+                kmh: 0
+            },
+            methods: {
+                DoCalc(){
+                    this.cm = this.CalcLenght(this.l, this.inch).toFixed(2);
+                    this.kg = (this.w * 0.45359237).toFixed(2);
+                    this.kmh = (this.s * 1.609344).toFixed(2);
+                },
+                CalcLenght(num1, num2){  
+                    return (12 * num1 * 2.54) + (num2 * 2.54);
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>
