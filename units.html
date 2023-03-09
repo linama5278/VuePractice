@@ -8,15 +8,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
     <link rel="stylesheet" href="./button.css" type="text/css" />
     <title>Document</title>
-    <style>.short{ width:2em; }</style>
+    <style>input{ width:3em; }.short{ width:2em; }</style>
 </head>
 
 <body>
     <div id='calc'>
         <h1>Unit Converter</h1>
-        ft:<input type="text" v-model="l" @keyup="DoCalc" class="short"/>'<input type="text" v-model="inch"@keyup="DoCalc" class="short"/> = {{cm}}cm<br >
-        lb:<input type="text" v-model="w" @keyup="DoCalc"/> = {{kg}}kg<br >
-        mph:<input type="text" v-model="s" @keyup="DoCalc"/> = {{kmh}}kmh<br >
+        ft:<input type="number" v-model="l" @keyup="DoCalc" class="short"/>'<input type="number" v-model="inch"@keyup="DoCalc" class="short"/> = {{cm}}cm<br >
+        lb:<input type="number" v-model="w" @keyup="DoCalc"/> = {{kg}}kg<br >
+        mph:<input type="number" v-model="s" @keyup="DoCalc"/> = {{kmh}}kmh<br >
     </div>
 
     <script>
