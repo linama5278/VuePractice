@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<title>要送醫院</title>
+</head>
+<style>
+table {
+	border-collapse: collapse;
+}
+th, td {
+	border: 1px solid #c1deff;
+	text-align:center;
+}
+th {
+	width: 5rem;
+	background-color: #c1deff;
+	font-weight: bold;
+}
+.hide {
+	display: none;
+}
+.big {
+	font-size: 1.25rem;
+}
+.good {
+	border:0;
+	border-bottom: 3px solid #f00;
+	width: 2rem;
+	text-align: center;
+	background-color: transparent;
+	font-size: 1.5rem;
+}
+</style>
+<body>
+
+<h1>😒情緒控制量表</h1>
+<table>
+	<tr>
+		<th> </th>
+		<th>非常不同意<br />0分</th>
+		<th>不同意<br />1分</th>
+		<th>普通<br />2分</th>
+		<th>同意<br />3分</th>
+		<th>非常同意<br />4分</th>
+	</tr>
+	<tr>
+		<td>快樂</td>
+		<td><input type="radio" class="check-count" name="happy" id="rb1-1" value="0" /></td>
+		<td><input type="radio" class="check-count" name="happy" id="rb1-2" value="1" /></td>
+		<td><input type="radio" class="check-count" name="happy" id="rb1-3" value="2" /></td>
+		<td><input type="radio" class="check-count" name="happy" id="rb1-4" value="3" /></td>
+		<td><input type="radio" class="check-count" name="happy" id="rb1-5" value="4" /><input id="happy" class="score hide" /></td>
+	</tr>
+	<tr>
+		<td>憤怒</td>
+		<td><input type="radio" class="check-count" name="angry" id="rb2-1" value="0" /></td>
+		<td><input type="radio" class="check-count" name="angry" id="rb2-2" value="1" /></td>
+		<td><input type="radio" class="check-count" name="angry" id="rb2-3" value="2" /></td>
+		<td><input type="radio" class="check-count" name="angry" id="rb2-4" value="3" /></td>
+		<td><input type="radio" class="check-count" name="angry" id="rb2-5" value="4" /><input id="angry" class="score hide" /></td>
+	</tr>
+	<tr>
+		<td>困擾</td>
+		<td><input type="radio" class="check-count" name="confuse" id="rb3-1" value="0" /></td>
+		<td><input type="radio" class="check-count" name="confuse" id="rb3-2" value="1" /></td>
+		<td><input type="radio" class="check-count" name="confuse" id="rb3-3" value="2" /></td>
+		<td><input type="radio" class="check-count" name="confuse" id="rb3-4" value="3" /></td>
+		<td><input type="radio" class="check-count" name="confuse" id="rb3-5" value="4" /><input id="confuse" class="score hide" /></td>
+	</tr>
+	<tr>
+		<td>鬱悶</td>
+		<td><input type="radio" class="check-count" name="depress" id="rb4-1" value="0" /></td>
+		<td><input type="radio" class="check-count" name="depress" id="rb4-2" value="1" /></td>
+		<td><input type="radio" class="check-count" name="depress" id="rb4-3" value="2" /></td>
+		<td><input type="radio" class="check-count" name="depress" id="rb4-4" value="3" /></td>
+		<td><input type="radio" class="check-count" name="depress" id="rb4-5" value="4" /><input id="depress" class="score hide" /></td>
+	</tr>
+	<tr>
+		<td>靠北</td>
+		<td><input type="radio" class="check-count" name="fxxk" id="rb5-1" value="0" /></td>
+		<td><input type="radio" class="check-count" name="fxxk" id="rb5-2" value="1" /></td>
+		<td><input type="radio" class="check-count" name="fxxk" id="rb5-3" value="2" /></td>
+		<td><input type="radio" class="check-count" name="fxxk" id="rb5-4" value="3" /></td>
+		<td><input type="radio" class="check-count" name="fxxk" id="rb5-5" value="4" /><input id="fxxk" class="score hide" /></td>
+	</tr>
+</table>
+情緒量表總分：<input type="text" id="score" disabled class="good" /><br />
+🏥要送醫院嗎：
+<input type="radio" id="hosp1" name="hosp" value="0" disabled /><label for="hosp1" class="big">不用</label>
+<input type="radio" id="hosp2" name="hosp" value="1" disabled /><label for="hosp2" class="big">送</label>
+<input type="radio" id="hosp3" name="hosp" value="2" disabled /><label for="hosp3" class="big">馬上送</label>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	$(function() {
+		var num = 0;
+		$('.check-count').change(function(){		
+			$(`:radio[name=${this.name}]`).each(function(){
+				if ($(this).is(':checked')){
+					$(`#${this.name}`).val(this.value);
+				}
+			});
+			num = 0;
+			$('.score').each(function(){
+				num += Number($(this).val());
+			});			
+			$('#score').val(num);
+
+			$(':radio[name=hosp]').attr('checked',false);
+			if(num < 7){
+				$('#hosp1').attr('checked', 'checked');
+			}
+			else if(num < 11){
+				$('#hosp2').attr('checked', 'checked');
+			}
+			else {
+				$('#hosp3').attr('checked', 'checked');
+			}
+		});
+	});
+</script>
+</body>
+</html>
