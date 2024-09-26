@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<title>Train</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container {
+    max-width: 300px;
+    margin: .5rem auto;
+}
+.emu {
+    width: 100%;
+}
+.carriage {
+    margin: 0 auto 1rem;
+    border: 1px solid #eee;
+    border-radius: .3rem;
+}
+.door-area{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.row {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+.sits {
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+}
+.sit {
+    text-align: center;
+    color: #444;
+    font-size: 1.5rem;
+    padding: .25rem;
+    margin: .2rem .25rem;
+    background-color: #f2f2f2;
+    border: 1px solid #eee;
+    border-radius: .3rem;
+}
+.way{
+    width: 2.5rem;
+}
+.area-2 {
+    text-align: center;
+    color: #444;
+    font-size: 1.5rem;
+    padding: .25rem;
+    margin: .2rem .25rem;
+}
+</style>
+<body>
+<div class="container">
+    <h1 style="text-align: center;"><i class="fa-solid fa-train"></i></h1>
+    <div class="emu">
+        <div class="carriage">
+            <div class="driver-area"></div>
+            <div class="door-area">
+                <div class="door-left"><i class="fa-solid fa-door-open"></i></div>
+                <div class="door-right"><i class="fa-solid fa-door-open"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                </div>
+                <div class="row">
+                    <div class="sit">01</div>
+                    <div class="sit">03</div>
+                    <div class="way"></div>
+                    <div class="sit">04</div>
+                    <div class="sit">02</div>
+                </div>
+                <div class="row">
+                    <div class="sit">05</div>
+                    <div class="sit">07</div>
+                    <div class="way"></div>
+                    <div class="sit">08</div>
+                    <div class="sit">06</div>
+                </div>
+                <div class="row">
+                    <div class="sit">09</div>
+                    <div class="sit">11</div>
+                    <div class="way"></div>
+                    <div class="sit">12</div>
+                    <div class="sit">10</div>
+                </div>
+                <div class="row">
+                    <div class="sit">13</div>
+                    <div class="sit">15</div>
+                    <div class="way"></div>
+                    <div class="sit">16</div>
+                    <div class="sit">14</div>
+                </div>
+                <div class="row">
+                    <div class="sit">17</div>
+                    <div class="sit">19</div>
+                    <div class="way"></div>
+                    <div class="sit">20</div>
+                    <div class="sit">18</div>
+                </div>
+                <div class="row">
+                    <div class="sit">21</div>
+                    <div class="sit">23</div>
+                    <div class="way"></div>
+                    <div class="sit">24</div>
+                    <div class="sit">22</div>
+                </div>
+                <div class="row">
+                    <div class="sit">25</div>
+                    <div class="sit">27</div>
+                    <div class="way"></div>
+                    <div class="sit">28</div>
+                    <div class="sit">26</div>
+                </div>
+                <div class="row">
+                    <div class="sit">29</div>
+                    <div class="sit">31</div>
+                    <div class="way"></div>
+                    <div class="sit">32</div>
+                    <div class="sit">30</div>
+                </div>
+                <div class="row">
+                    <div class="sit">33</div>
+                    <div class="sit">35</div>
+                    <div class="way"></div>
+                    <div class="sit">36</div>
+                    <div class="sit">34</div>
+                </div>
+                <div class="row">
+                    <div class="sit">37</div>
+                    <div class="sit">39</div>
+                    <div class="way"></div>
+                    <div class="sit">40</div>
+                    <div class="sit">38</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door-left"><i class="fa-solid fa-door-open"></i></div>
+                <div class="door-right"><i class="fa-solid fa-door-open"></i></div>
+            </div>
+            <div class="row">
+                <div class="area-2"><i class="fa-solid fa-trash"></i></div>
+            </div>
+            <div class="row">
+                <div class="area-2"><i class="fa-solid fa-person"></i></div>
+            </div>
+        </div>
+        <div class="carriage"></div>
+        <div class="carriage"></div>
+        <div class="carriage"></div>
+        <div class="carriage"></div>
+        <div class="carriage"></div>
+        <div class="carriage"></div>
+        <div class="carriage"></div>
+        <div class="carriage"></div>
+        <div class="carriage"></div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+</script>
+</body>
+</html>
