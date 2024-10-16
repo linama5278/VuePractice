@@ -46,6 +46,10 @@ body {
     font-size: 3rem;
     text-align: center;
 }
+.rear>.driver-area {
+    border-bottom: 0;
+    border-top: 2px solid #ddd;
+}
 .door-area{
     display: grid;
     grid-template-columns: auto auto auto;
@@ -63,6 +67,12 @@ body {
 .row {
     display: grid;
     grid-template-columns: 1fr 1fr auto 1fr 1fr;
+    gap: .3rem;
+}
+.row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto 1fr 1fr;
+    grid-template-rows: repeat(2, minmax(40px, auto));
     gap: .3rem;
 }
 .row-4 {
@@ -85,10 +95,19 @@ body {
     border: 1px solid #eee;
     border-radius: .3rem;
     line-height: 2.5rem;
+    cursor: pointer;
 }
 .sit.wheel {
     color: white;
     background-color: #0003B0;
+}
+.sit.enabled{
+    color: white;
+    background-color: orange;
+    border-color: #ffc800;
+}
+.sit.group{
+    background-color: aliceblue;
 }
 .way{
     width: 2.5rem;
@@ -103,7 +122,7 @@ body {
     border-radius: .3rem;
 }
 .area-2 {
-    grid-column: 1 / span 2;
+    grid-column: 1 /span 2;
 }
 .area-4 {
     grid-column: 4 / span 2;
@@ -114,12 +133,23 @@ body {
     grid-column: 4 / span 2;
 }
 .area-4-1 {
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 2;
+    grid-column: span 2;
+    grid-row: span 2;
+    line-height: 2.2rem;
+}
+.area-2-2 {
+    grid-column: span 2;
+}
+.area-4-2 {
+    grid-column: 4 / span 2;
+    grid-row: span 2;
     line-height: 2.2rem;
 }
 .area-3 {
     grid-column: 1 / span 3;
+}
+.area-3-1 {
+    grid-column: 3 / span 3;
 }
 .line-1 {
     line-height: 2.5rem;
@@ -127,10 +157,30 @@ body {
 .line-2 {
     line-height: 4.5rem;
 }
+.btn {
+    color: #444;
+    font-size: 1.2rem;
+    padding: .4rem;
+    margin: .25rem;
+    background-color: #f2f2f2;
+    border: 1px solid #eee;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #dadada;
+}
+.cap {
+    font-size: 2rem;
+}
+.area.baby{
+    background-color: #ffe8f3;
+}
 </style>
 <body>
 <div class="container">
     <h1 style="text-align: center;"><i class="fa-solid fa-train"></i></h1>
+    <div style="text-align: center;"><button id="th" class="btn">3000</button><button id="py" class="btn">Puyuma</button></div>
     <div class="emu">
         <div class="carriage front">
             <div class="driver-area"><i class="pilot"></i></div>
@@ -142,6 +192,10 @@ body {
             <div class="sits">
                 <div class="row">
                     <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div></div>
                 </div>
                 <div class="row">
                     <div class="sit">1</div>
@@ -765,13 +819,16 @@ body {
                 </div>
                 <div class="row-4">
                     <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="area area-4-1"><i class="pilot"></i></div>
-                <div class="area area-2-1">　</div>
+            <div class="row-2">
+                <div class="area area-4-1 line-2"><div class="cap"><i class="pilot"></i></div></div>
                 <div class="way"></div>
-                <div class="area area-2-1">　</div>
+                <div></div>
+                <div style="text-align:right;font-size:1.4rem;"><i class="fa-solid fa-heart-pulse"></i></div>
             </div>
             <div class="door-area">
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
@@ -779,11 +836,1539 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage rear"></div>
+        <div class="carriage">
+            <div class="row">
+                <div class="area area-2"><i class="fa-solid fa-trash"></i></div>
+                <div class="way"></div>
+                <div class="area area-3 line-2"><i class="fa-solid fa-restroom"></i> <i class="fa-solid fa-baby"></i> <i class="fa-solid fa-wheelchair"></i></div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row-2" style="margin-bottom:.4rem">
+                    <div class="area area-4-1 line-2 baby"><i class="fa-solid fa-person-breastfeeding"></i></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div class="sit wheel" style="margin-bottom:0"><i class="fa-solid fa-wheelchair"></i></div>
+                </div>
+                <div class="row">
+                    <div class="sit wheel"><i class="fa-solid fa-wheelchair"></i></div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="row">
+                    <div class="sit wheel">1</div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div class="sit wheel">2</div>
+                </div>
+                <div class="row">
+                    <div class="sit">5</div>
+                    <div class="sit">7</div>
+                    <div class="way"></div>
+                    <div class="sit">8</div>
+                    <div class="sit">6</div>
+                </div>
+                <div class="row">
+                    <div class="sit">9</div>
+                    <div class="sit">11</div>
+                    <div class="way"></div>
+                    <div class="sit">12</div>
+                    <div class="sit">10</div>
+                </div>
+                <div class="row">
+                    <div class="sit">13</div>
+                    <div class="sit">15</div>
+                    <div class="way"></div>
+                    <div class="sit">16</div>
+                    <div class="sit">14</div>
+                </div>
+                <div class="row">
+                    <div class="sit">17</div>
+                    <div class="sit">19</div>
+                    <div class="way"></div>
+                    <div class="sit">20</div>
+                    <div class="sit">18</div>
+                </div>
+                <div class="row">
+                    <div class="sit">21</div>
+                    <div class="sit">23</div>
+                    <div class="way"></div>
+                    <div class="sit">24</div>
+                    <div class="sit">22</div>
+                </div>
+                <div class="row">
+                    <div class="sit">25</div>
+                    <div class="sit">27</div>
+                    <div class="way"></div>
+                    <div class="sit">28</div>
+                    <div class="sit">26</div>
+                </div>
+                <div class="row">
+                    <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                    <div></div>
+                    <div class="way"></div>
+                </div>
+            </div>
+            <div class="row-2">
+                <div class="area area-4-1 line-2"><div class="cap"><i class="pilot"></i></div></div>
+                <div class="way"></div>
+                <div></div>
+                <div style="text-align:right;font-size:1.4rem;"><i class="fa-solid fa-heart-pulse"></i></div>
+            </div>        
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+        </div>
+        <div class="carriage">
+            <div class="row">
+                <div class="area area-4-1"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
+                <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
+                <div class="way"></div>
+                <div class="area area-2-1"><i class="fa-solid fa-trash"></i></div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit">1</div>
+                    <div class="sit">3</div>
+                    <div class="way"></div>
+                    <div class="sit">4</div>
+                    <div class="sit">2</div>
+                </div>
+                <div class="row">
+                    <div class="sit">5</div>
+                    <div class="sit">7</div>
+                    <div class="way"></div>
+                    <div class="sit">8</div>
+                    <div class="sit">6</div>
+                </div>
+                <div class="row">
+                    <div class="sit">9</div>
+                    <div class="sit">11</div>
+                    <div class="way"></div>
+                    <div class="sit">12</div>
+                    <div class="sit">10</div>
+                </div>
+                <div class="row">
+                    <div class="sit">13</div>
+                    <div class="sit">15</div>
+                    <div class="way"></div>
+                    <div class="sit">16</div>
+                    <div class="sit">14</div>
+                </div>
+                <div class="row">
+                    <div class="sit">17</div>
+                    <div class="sit">19</div>
+                    <div class="way"></div>
+                    <div class="sit">20</div>
+                    <div class="sit">18</div>
+                </div>
+                <div class="row">
+                    <div class="sit">21</div>
+                    <div class="sit">23</div>
+                    <div class="way"></div>
+                    <div class="sit">24</div>
+                    <div class="sit">22</div>
+                </div>
+                <div class="row">
+                    <div class="sit">25</div>
+                    <div class="sit">27</div>
+                    <div class="way"></div>
+                    <div class="sit">28</div>
+                    <div class="sit">26</div>
+                </div>
+                <div class="row">
+                    <div class="sit">29</div>
+                    <div class="sit">31</div>
+                    <div class="way"></div>
+                    <div class="sit">32</div>
+                    <div class="sit">30</div>
+                </div>
+                <div class="row">
+                    <div class="sit">33</div>
+                    <div class="sit">35</div>
+                    <div class="way"></div>
+                    <div class="sit">36</div>
+                    <div class="sit">34</div>
+                </div>
+                <div class="row">
+                    <div class="sit">37</div>
+                    <div class="sit">39</div>
+                    <div class="way"></div>
+                    <div class="sit">40</div>
+                    <div class="sit">38</div>
+                </div>
+                <div class="row">
+                    <div class="sit">41</div>
+                    <div class="sit">43</div>
+                    <div class="way"></div>
+                    <div class="sit">44</div>
+                    <div class="sit">42</div>
+                </div>
+                <div class="row">
+                    <div class="sit">45</div>
+                    <div class="sit">47</div>
+                    <div class="way"></div>
+                    <div class="sit">48</div>
+                    <div class="sit">46</div>
+                </div>
+                <div class="row">
+                    <div class="sit">49</div>
+                    <div class="sit">51</div>
+                    <div class="way"></div>
+                    <div class="sit">52</div>
+                    <div class="sit">50</div>
+                </div>
+                <div class="row">
+                    <div></div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+        </div>
+        <div class="carriage">
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                    <div></div>
+                    <div class="way"></div>
+                </div>
+                <div class="row">
+                    <div class="sit">50</div>
+                    <div class="sit">52</div>
+                    <div class="way"></div>
+                    <div class="sit">51</div>
+                    <div class="sit">49</div>
+                </div>
+                <div class="row">
+                    <div class="sit">46</div>
+                    <div class="sit">48</div>
+                    <div class="way"></div>
+                    <div class="sit">47</div>
+                    <div class="sit">45</div>
+                </div>
+                <div class="row">
+                    <div class="sit">42</div>
+                    <div class="sit">44</div>
+                    <div class="way"></div>
+                    <div class="sit">43</div>
+                    <div class="sit">41</div>
+                </div>
+                <div class="row">
+                    <div class="sit">38</div>
+                    <div class="sit">40</div>
+                    <div class="way"></div>
+                    <div class="sit">39</div>
+                    <div class="sit">37</div>
+                </div>
+                <div class="row">
+                    <div class="sit">34</div>
+                    <div class="sit">36</div>
+                    <div class="way"></div>
+                    <div class="sit">35</div>
+                    <div class="sit">33</div>
+                </div>
+                <div class="row">
+                    <div class="sit">30</div>
+                    <div class="sit">32</div>
+                    <div class="way"></div>
+                    <div class="sit">31</div>
+                    <div class="sit">29</div>
+                </div>
+                <div class="row">
+                    <div class="sit">26</div>
+                    <div class="sit">28</div>
+                    <div class="way"></div>
+                    <div class="sit">27</div>
+                    <div class="sit">25</div>
+                </div>
+                <div class="row">
+                    <div class="sit">22</div>
+                    <div class="sit">24</div>
+                    <div class="way"></div>
+                    <div class="sit">23</div>
+                    <div class="sit">21</div>
+                </div>
+                <div class="row">
+                    <div class="sit">18</div>
+                    <div class="sit">20</div>
+                    <div class="way"></div>
+                    <div class="sit">19</div>
+                    <div class="sit">17</div>
+                </div>
+                <div class="row">
+                    <div class="sit">14</div>
+                    <div class="sit">16</div>
+                    <div class="way"></div>
+                    <div class="sit">15</div>
+                    <div class="sit">13</div>
+                </div>
+                <div class="row">
+                    <div class="sit">10</div>
+                    <div class="sit">12</div>
+                    <div class="way"></div>
+                    <div class="sit">11</div>
+                    <div class="sit">9</div>
+                </div>
+                <div class="row">
+                    <div class="sit">6</div>
+                    <div class="sit">8</div>
+                    <div class="way"></div>
+                    <div class="sit">7</div>
+                    <div class="sit">5</div>
+                </div>
+                <div class="row">
+                    <div class="sit">2</div>
+                    <div class="sit">4</div>
+                    <div class="way"></div>
+                    <div class="sit">3</div>
+                    <div class="sit">1</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="row">
+                <div class="area area-2-2"><i class="fa-solid fa-trash"></i></div>
+                <div class="way"></div>
+                <div class="area area-4-2"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
+                <div class="area area-2-2"><i class="fa-solid fa-person"></i></div>
+            </div>
+        </div>
+        <div class="carriage">
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                    <div></div>
+                    <div class="way"></div>
+                </div>
+                <div class="row">
+                    <div class="sit">50</div>
+                    <div class="sit">52</div>
+                    <div class="way"></div>
+                    <div class="sit">51</div>
+                    <div class="sit">49</div>
+                </div>
+                <div class="row">
+                    <div class="sit">46</div>
+                    <div class="sit">48</div>
+                    <div class="way"></div>
+                    <div class="sit">47</div>
+                    <div class="sit">45</div>
+                </div>
+                <div class="row">
+                    <div class="sit">42</div>
+                    <div class="sit">44</div>
+                    <div class="way"></div>
+                    <div class="sit">43</div>
+                    <div class="sit">41</div>
+                </div>
+                <div class="row">
+                    <div class="sit">38</div>
+                    <div class="sit">40</div>
+                    <div class="way"></div>
+                    <div class="sit">39</div>
+                    <div class="sit">37</div>
+                </div>
+                <div class="row">
+                    <div class="sit">34</div>
+                    <div class="sit">36</div>
+                    <div class="way"></div>
+                    <div class="sit">35</div>
+                    <div class="sit">33</div>
+                </div>
+                <div class="row">
+                    <div class="sit">30</div>
+                    <div class="sit">32</div>
+                    <div class="way"></div>
+                    <div class="sit">31</div>
+                    <div class="sit">29</div>
+                </div>
+                <div class="row">
+                    <div class="sit">26</div>
+                    <div class="sit">28</div>
+                    <div class="way"></div>
+                    <div class="sit">27</div>
+                    <div class="sit">25</div>
+                </div>
+                <div class="row">
+                    <div class="sit">22</div>
+                    <div class="sit">24</div>
+                    <div class="way"></div>
+                    <div class="sit">23</div>
+                    <div class="sit">21</div>
+                </div>
+                <div class="row">
+                    <div class="sit">18</div>
+                    <div class="sit">20</div>
+                    <div class="way"></div>
+                    <div class="sit">19</div>
+                    <div class="sit">17</div>
+                </div>
+                <div class="row">
+                    <div class="sit">14</div>
+                    <div class="sit">16</div>
+                    <div class="way"></div>
+                    <div class="sit">15</div>
+                    <div class="sit">13</div>
+                </div>
+                <div class="row">
+                    <div class="sit">10</div>
+                    <div class="sit">12</div>
+                    <div class="way"></div>
+                    <div class="sit">11</div>
+                    <div class="sit">9</div>
+                </div>
+                <div class="row">
+                    <div class="sit">6</div>
+                    <div class="sit">8</div>
+                    <div class="way"></div>
+                    <div class="sit">7</div>
+                    <div class="sit">5</div>
+                </div>
+                <div class="row">
+                    <div class="sit">2</div>
+                    <div class="sit">4</div>
+                    <div class="way"></div>
+                    <div class="sit">3</div>
+                    <div class="sit">1</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="row">
+                <div class="area area-2-2"><i class="fa-solid fa-trash"></i></div>
+                <div class="way"></div>
+                <div class="area area-4-2"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
+                <div class="area area-2-2"><i class="fa-solid fa-person"></i></div>
+            </div>
+        </div>
+        <div class="carriage">
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                    <div></div>
+                    <div class="way"></div>
+                </div>
+                <div class="row">
+                    <div class="sit">50</div>
+                    <div class="sit">52</div>
+                    <div class="way"></div>
+                    <div class="sit">51</div>
+                    <div class="sit">49</div>
+                </div>
+                <div class="row">
+                    <div class="sit">46</div>
+                    <div class="sit">48</div>
+                    <div class="way"></div>
+                    <div class="sit">47</div>
+                    <div class="sit">45</div>
+                </div>
+                <div class="row">
+                    <div class="sit">42</div>
+                    <div class="sit">44</div>
+                    <div class="way"></div>
+                    <div class="sit">43</div>
+                    <div class="sit">41</div>
+                </div>
+                <div class="row">
+                    <div class="sit">38</div>
+                    <div class="sit">40</div>
+                    <div class="way"></div>
+                    <div class="sit">39</div>
+                    <div class="sit">37</div>
+                </div>
+                <div class="row">
+                    <div class="sit">34</div>
+                    <div class="sit">36</div>
+                    <div class="way"></div>
+                    <div class="sit">35</div>
+                    <div class="sit">33</div>
+                </div>
+                <div class="row">
+                    <div class="sit">30</div>
+                    <div class="sit">32</div>
+                    <div class="way"></div>
+                    <div class="sit">31</div>
+                    <div class="sit">29</div>
+                </div>
+                <div class="row">
+                    <div class="sit">26</div>
+                    <div class="sit">28</div>
+                    <div class="way"></div>
+                    <div class="sit">27</div>
+                    <div class="sit">25</div>
+                </div>
+                <div class="row">
+                    <div class="sit">22</div>
+                    <div class="sit">24</div>
+                    <div class="way"></div>
+                    <div class="sit">23</div>
+                    <div class="sit">21</div>
+                </div>
+                <div class="row">
+                    <div class="sit">18</div>
+                    <div class="sit">20</div>
+                    <div class="way"></div>
+                    <div class="sit">19</div>
+                    <div class="sit">17</div>
+                </div>
+                <div class="row">
+                    <div class="sit">14</div>
+                    <div class="sit">16</div>
+                    <div class="way"></div>
+                    <div class="sit">15</div>
+                    <div class="sit">13</div>
+                </div>
+                <div class="row">
+                    <div class="sit">10</div>
+                    <div class="sit">12</div>
+                    <div class="way"></div>
+                    <div class="sit">11</div>
+                    <div class="sit">9</div>
+                </div>
+                <div class="row">
+                    <div class="sit">6</div>
+                    <div class="sit">8</div>
+                    <div class="way"></div>
+                    <div class="sit">7</div>
+                    <div class="sit">5</div>
+                </div>
+                <div class="row">
+                    <div class="sit">2</div>
+                    <div class="sit">4</div>
+                    <div class="way"></div>
+                    <div class="sit">3</div>
+                    <div class="sit">1</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="row">
+                <div class="area area-2-2"><i class="fa-solid fa-trash"></i></div>
+                <div class="way"></div>
+                <div class="area area-4-2"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
+                <div class="area area-2-2"><i class="fa-solid fa-person"></i></div>
+            </div>
+        </div>
+        <div class="carriage rear">
+            <div class="row">
+                <div class="area area-4-1"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
+                <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
+                <div class="way"></div>
+                <div class="area area-2-1"><i class="fa-solid fa-trash"></i></div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit">38</div>
+                    <div class="sit">40</div>
+                    <div class="way"></div>
+                    <div class="sit">39</div>
+                    <div class="sit">37</div>
+                </div>
+                <div class="row">
+                    <div class="sit">34</div>
+                    <div class="sit">36</div>
+                    <div class="way"></div>
+                    <div class="sit">35</div>
+                    <div class="sit">33</div>
+                </div>
+                <div class="row">
+                    <div class="sit">30</div>
+                    <div class="sit">32</div>
+                    <div class="way"></div>
+                    <div class="sit">31</div>
+                    <div class="sit">29</div>
+                </div>
+                <div class="row">
+                    <div class="sit">26</div>
+                    <div class="sit">28</div>
+                    <div class="way"></div>
+                    <div class="sit">27</div>
+                    <div class="sit">25</div>
+                </div>
+                <div class="row">
+                    <div class="sit">22</div>
+                    <div class="sit">24</div>
+                    <div class="way"></div>
+                    <div class="sit">23</div>
+                    <div class="sit">21</div>
+                </div>
+                <div class="row">
+                    <div class="sit">18</div>
+                    <div class="sit">20</div>
+                    <div class="way"></div>
+                    <div class="sit">19</div>
+                    <div class="sit">17</div>
+                </div>
+                <div class="row">
+                    <div class="sit">14</div>
+                    <div class="sit">16</div>
+                    <div class="way"></div>
+                    <div class="sit">15</div>
+                    <div class="sit">13</div>
+                </div>
+                <div class="row">
+                    <div class="sit">10</div>
+                    <div class="sit">12</div>
+                    <div class="way"></div>
+                    <div class="sit">11</div>
+                    <div class="sit">9</div>
+                </div>
+                <div class="row">
+                    <div class="sit">6</div>
+                    <div class="sit">8</div>
+                    <div class="way"></div>
+                    <div class="sit">7</div>
+                    <div class="sit">5</div>
+                </div>
+                <div class="row">
+                    <div class="sit">2</div>
+                    <div class="sit">4</div>
+                    <div class="way"></div>
+                    <div class="sit">3</div>
+                    <div class="sit">1</div>
+                </div>
+                <div class="row">
+                    <div></div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="driver-area"><i class="pilot"></i></div>
+        </div>
+    </div>
+    <div class="pum" hidden>
+        <div class="carriage front">            
+            <div class="driver-area"><i class="pilot"></i></div>
+            <div class="row">
+                <div></div>
+                <div></div>
+                <div class="way"></div>
+                <div class="area area-3-1"><i class="pilot"></i></div>
+                <div class="area area-3-1 line-2"><i class="fa-solid fa-restroom"></i> <i class="fa-solid fa-baby"></i> <i class="fa-solid fa-wheelchair"></i></div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit wheel"><i class="fa-solid fa-wheelchair"></i></div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                </div>
+                <div class="row">
+                    <div class="line-1">　</div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="row">
+                    <div class="sit wheel">1</div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div class="sit wheel">2</div>
+                </div>
+                <div class="row">
+                    <div class="sit">5</div>
+                    <div class="sit">7</div>
+                    <div class="way"></div>
+                    <div class="sit">8</div>
+                    <div class="sit">6</div>
+                </div>
+                <div class="row">
+                    <div class="sit">9</div>
+                    <div class="sit">11</div>
+                    <div class="way"></div>
+                    <div class="sit">12</div>
+                    <div class="sit">10</div>
+                </div>
+                <div class="row">
+                    <div class="sit">13</div>
+                    <div class="sit">15</div>
+                    <div class="way"></div>
+                    <div class="sit">16</div>
+                    <div class="sit">14</div>
+                </div>
+                <div class="row">
+                    <div class="sit">17</div>
+                    <div class="sit">19</div>
+                    <div class="way"></div>
+                    <div class="sit">20</div>
+                    <div class="sit">18</div>
+                </div>
+                <div class="row">
+                    <div class="sit">21</div>
+                    <div class="sit">23</div>
+                    <div class="way"></div>
+                    <div class="sit">24</div>
+                    <div class="sit">22</div>
+                </div>
+                <div class="row">
+                    <div class="sit">25</div>
+                    <div class="sit">27</div>
+                    <div class="way"></div>
+                    <div class="sit">28</div>
+                    <div class="sit">26</div>
+                </div>
+                <div class="row">
+                    <div class="sit">29</div>
+                    <div class="sit">31</div>
+                    <div class="way"></div>
+                    <div class="sit">32</div>
+                    <div class="sit">30</div>
+                </div>
+                <div class="row">
+                    <div class="sit">33</div>
+                    <div class="sit">35</div>
+                    <div class="way"></div>
+                    <div class="sit">36</div>
+                    <div class="sit">34</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+        </div>
+        <div class="carriage">
+            <div class="row">
+                <div class="area area-2-2"><i class="fa-solid fa-person"></i></div>
+                <div class="way"></div>
+                <div class="area area-4-2 line-2"><i class="fa-solid fa-restroom"></i></div>
+                <div class="area area-2-2"><i class="fa-solid fa-suitcase-rolling"></i></div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit">1</div>
+                    <div class="sit">3</div>
+                    <div class="way"></div>
+                    <div class="sit">4</div>
+                    <div class="sit">2</div>
+                </div>
+                <div class="row">
+                    <div class="sit">5</div>
+                    <div class="sit">7</div>
+                    <div class="way"></div>
+                    <div class="sit">8</div>
+                    <div class="sit">6</div>
+                </div>
+                <div class="row">
+                    <div class="sit">9</div>
+                    <div class="sit">11</div>
+                    <div class="way"></div>
+                    <div class="sit">12</div>
+                    <div class="sit">10</div>
+                </div>
+                <div class="row">
+                    <div class="sit">13</div>
+                    <div class="sit">15</div>
+                    <div class="way"></div>
+                    <div class="sit">16</div>
+                    <div class="sit">14</div>
+                </div>
+                <div class="row">
+                    <div class="sit">17</div>
+                    <div class="sit">19</div>
+                    <div class="way"></div>
+                    <div class="sit">20</div>
+                    <div class="sit">18</div>
+                </div>
+                <div class="row">
+                    <div class="sit">21</div>
+                    <div class="sit">23</div>
+                    <div class="way"></div>
+                    <div class="sit">24</div>
+                    <div class="sit">22</div>
+                </div>
+                <div class="row">
+                    <div class="sit">25</div>
+                    <div class="sit">27</div>
+                    <div class="way"></div>
+                    <div class="sit">28</div>
+                    <div class="sit">26</div>
+                </div>
+                <div class="row">
+                    <div class="sit">29</div>
+                    <div class="sit">31</div>
+                    <div class="way"></div>
+                    <div class="sit">32</div>
+                    <div class="sit">30</div>
+                </div>
+                <div class="row">
+                    <div class="sit">33</div>
+                    <div class="sit">35</div>
+                    <div class="way"></div>
+                    <div class="sit">36</div>
+                    <div class="sit">34</div>
+                </div>
+                <div class="row">
+                    <div class="sit">37</div>
+                    <div class="sit">39</div>
+                    <div class="way"></div>
+                    <div class="sit">40</div>
+                    <div class="sit">38</div>
+                </div>
+                <div class="row">
+                    <div class="sit">41</div>
+                    <div class="sit">43</div>
+                    <div class="way"></div>
+                    <div class="sit">44</div>
+                    <div class="sit">42</div>
+                </div>
+                <div class="row">
+                    <div class="sit">45</div>
+                    <div class="sit">47</div>
+                    <div class="way"></div>
+                    <div class="sit">48</div>
+                    <div class="sit">46</div>
+                </div>
+                <div class="row">
+                    <div class="sit">50</div>
+                    <div class="sit">52</div>
+                    <div class="way"></div>
+                    <div class="sit">51</div>
+                    <div class="sit">49</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+        </div>
+        <div class="carriage">
+            <div class="row">
+                <div class="area area-4-1 line-2 baby"><i class="fa-solid fa-person-breastfeeding"></i></div>
+                <div class="way"></div>
+                <div class="area area-4-2"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-toilet"></i></div>
+                <div class="area area-2"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                <div class="way"></div>
+                <div class="area area-2-2"><i class="fa-solid fa-building"></i></div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit">1</div>
+                    <div class="sit">3</div>
+                    <div class="way"></div>
+                    <div class="sit">4</div>
+                    <div class="sit">2</div>
+                </div>
+                <div class="row">
+                    <div class="sit">5</div>
+                    <div class="sit">7</div>
+                    <div class="way"></div>
+                    <div class="sit">8</div>
+                    <div class="sit">6</div>
+                </div>
+                <div class="row">
+                    <div class="sit">9</div>
+                    <div class="sit">11</div>
+                    <div class="way"></div>
+                    <div class="sit">12</div>
+                    <div class="sit">10</div>
+                </div>
+                <div class="row">
+                    <div class="sit">13</div>
+                    <div class="sit">15</div>
+                    <div class="way"></div>
+                    <div class="sit">16</div>
+                    <div class="sit">14</div>
+                </div>
+                <div class="row">
+                    <div class="sit">17</div>
+                    <div class="sit">19</div>
+                    <div class="way"></div>
+                    <div class="sit">20</div>
+                    <div class="sit">18</div>
+                </div>
+                <div class="row">
+                    <div class="sit">21</div>
+                    <div class="sit">23</div>
+                    <div class="way"></div>
+                    <div class="sit">24</div>
+                    <div class="sit">22</div>
+                </div>
+                <div class="row">
+                    <div class="sit">25</div>
+                    <div class="sit">27</div>
+                    <div class="way"></div>
+                    <div class="sit">28</div>
+                    <div class="sit">26</div>
+                </div>
+                <div class="row">
+                    <div class="sit">29</div>
+                    <div class="sit">31</div>
+                    <div class="way"></div>
+                    <div class="sit">32</div>
+                    <div class="sit">30</div>
+                </div>
+                <div class="row">
+                    <div class="sit">33</div>
+                    <div class="sit">35</div>
+                    <div class="way"></div>
+                    <div class="sit">36</div>
+                    <div class="sit">34</div>
+                </div>
+                <div class="row">
+                    <div class="sit">37</div>
+                    <div class="sit">39</div>
+                    <div class="way"></div>
+                    <div class="sit">40</div>
+                    <div class="sit">38</div>
+                </div>
+                <div class="row">
+                    <div class="sit">41</div>
+                    <div class="sit">43</div>
+                    <div class="way"></div>
+                    <div class="sit">44</div>
+                    <div class="sit">42</div>
+                </div>
+                <div class="row">
+                    <div class="sit">45</div>
+                    <div class="sit">47</div>
+                    <div class="way"></div>
+                    <div class="sit">48</div>
+                    <div class="sit">46</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+        </div>
+        <div class="carriage">
+            <div class="row">
+                <div class="area area-2-2"><i class="fa-solid fa-person"></i></div>
+                <div class="way"></div>
+                <div class="area area-4-2 line-2"><i class="fa-solid fa-restroom"></i></div>
+                <div class="area area-2-2"><i class="fa-solid fa-suitcase-rolling"></i></div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit">1</div>
+                    <div class="sit">3</div>
+                    <div class="way"></div>
+                    <div class="sit">4</div>
+                    <div class="sit">2</div>
+                </div>
+                <div class="row">
+                    <div class="sit">5</div>
+                    <div class="sit">7</div>
+                    <div class="way"></div>
+                    <div class="sit">8</div>
+                    <div class="sit">6</div>
+                </div>
+                <div class="row">
+                    <div class="sit">9</div>
+                    <div class="sit">11</div>
+                    <div class="way"></div>
+                    <div class="sit">12</div>
+                    <div class="sit">10</div>
+                </div>
+                <div class="row">
+                    <div class="sit">13</div>
+                    <div class="sit">15</div>
+                    <div class="way"></div>
+                    <div class="sit">16</div>
+                    <div class="sit">14</div>
+                </div>
+                <div class="row">
+                    <div class="sit">17</div>
+                    <div class="sit">19</div>
+                    <div class="way"></div>
+                    <div class="sit">20</div>
+                    <div class="sit">18</div>
+                </div>
+                <div class="row">
+                    <div class="sit">21</div>
+                    <div class="sit">23</div>
+                    <div class="way"></div>
+                    <div class="sit group">24</div>
+                    <div class="sit group">22</div>
+                </div>
+                <div class="row">
+                    <div class="sit">25</div>
+                    <div class="sit">27</div>
+                    <div class="way"></div>
+                    <div class="sit group">28</div>
+                    <div class="sit group">26</div>
+                </div>
+                <div class="row">
+                    <div class="sit group">29</div>
+                    <div class="sit group">31</div>
+                    <div class="way"></div>
+                    <div class="sit">32</div>
+                    <div class="sit">30</div>
+                </div>
+                <div class="row">
+                    <div class="sit group">33</div>
+                    <div class="sit group">35</div>
+                    <div class="way"></div>
+                    <div class="sit">36</div>
+                    <div class="sit">34</div>
+                </div>
+                <div class="row">
+                    <div class="sit">37</div>
+                    <div class="sit">39</div>
+                    <div class="way"></div>
+                    <div class="sit group">40</div>
+                    <div class="sit group">38</div>
+                </div>
+                <div class="row">
+                    <div class="sit">41</div>
+                    <div class="sit">43</div>
+                    <div class="way"></div>
+                    <div class="sit group">44</div>
+                    <div class="sit group">42</div>
+                </div>
+                <div class="row">
+                    <div class="sit group">45</div>
+                    <div class="sit group">47</div>
+                    <div class="way"></div>
+                    <div class="sit">48</div>
+                    <div class="sit">46</div>
+                </div>
+                <div class="row">
+                    <div class="sit group">49</div>
+                    <div class="sit group">51</div>
+                    <div class="way"></div>
+                    <div class="sit">52</div>
+                    <div class="sit">50</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+        </div>
+        <div class="carriage">
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit">50</div>
+                    <div class="sit">52</div>
+                    <div class="way"></div>
+                    <div class="sit group">51</div>
+                    <div class="sit group">49</div>
+                </div>
+                <div class="row">
+                    <div class="sit">46</div>
+                    <div class="sit">48</div>
+                    <div class="way"></div>
+                    <div class="sit group">47</div>
+                    <div class="sit group">45</div>
+                </div>
+                <div class="row">
+                    <div class="sit group">42</div>
+                    <div class="sit group">44</div>
+                    <div class="way"></div>
+                    <div class="sit">43</div>
+                    <div class="sit">41</div>
+                </div>
+                <div class="row">
+                    <div class="sit group">38</div>
+                    <div class="sit group">40</div>
+                    <div class="way"></div>
+                    <div class="sit">39</div>
+                    <div class="sit">37</div>
+                </div>
+                <div class="row">
+                    <div class="sit">34</div>
+                    <div class="sit">36</div>
+                    <div class="way"></div>
+                    <div class="sit group">35</div>
+                    <div class="sit group">33</div>
+                </div>
+                <div class="row">
+                    <div class="sit">30</div>
+                    <div class="sit">32</div>
+                    <div class="way"></div>
+                    <div class="sit group">31</div>
+                    <div class="sit group">29</div>
+                </div>
+                <div class="row">
+                    <div class="sit group">26</div>
+                    <div class="sit group">28</div>
+                    <div class="way"></div>
+                    <div class="sit">27</div>
+                    <div class="sit">25</div>
+                </div>
+                <div class="row">
+                    <div class="sit group">22</div>
+                    <div class="sit group">24</div>
+                    <div class="way"></div>
+                    <div class="sit">23</div>
+                    <div class="sit">21</div>
+                </div>
+                <div class="row">
+                    <div class="sit">18</div>
+                    <div class="sit">20</div>
+                    <div class="way"></div>
+                    <div class="sit">19</div>
+                    <div class="sit">17</div>
+                </div>
+                <div class="row">
+                    <div class="sit">14</div>
+                    <div class="sit">16</div>
+                    <div class="way"></div>
+                    <div class="sit">15</div>
+                    <div class="sit">13</div>
+                </div>
+                <div class="row">
+                    <div class="sit">10</div>
+                    <div class="sit">12</div>
+                    <div class="way"></div>
+                    <div class="sit">11</div>
+                    <div class="sit">9</div>
+                </div>
+                <div class="row">
+                    <div class="sit">6</div>
+                    <div class="sit">8</div>
+                    <div class="way"></div>
+                    <div class="sit">7</div>
+                    <div class="sit">5</div>
+                </div>
+                <div class="row">
+                    <div class="sit">2</div>
+                    <div class="sit">4</div>
+                    <div class="way"></div>
+                    <div class="sit">3</div>
+                    <div class="sit">1</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="row">
+                <div class="area area-4-1 line-2"><i class="fa-solid fa-restroom"></i></div>
+                <div class="way"></div>
+                <div class="area area-2-1"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
+            </div>
+        </div>
+        <div class="carriage">
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit">46</div>
+                    <div class="sit">48</div>
+                    <div class="way"></div>
+                    <div class="sit">47</div>
+                    <div class="sit">45</div>
+                </div>
+                <div class="row">
+                    <div class="sit">43</div>
+                    <div class="sit">45</div>
+                    <div class="way"></div>
+                    <div class="sit">44</div>
+                    <div class="sit">42</div>
+                </div>
+                <div class="row">
+                    <div class="sit">39</div>
+                    <div class="sit">41</div>
+                    <div class="way"></div>
+                    <div class="sit">40</div>
+                    <div class="sit">38</div>
+                </div>
+                <div class="row">
+                    <div class="sit">35</div>
+                    <div class="sit">37</div>
+                    <div class="way"></div>
+                    <div class="sit">36</div>
+                    <div class="sit">34</div>
+                </div>
+                <div class="row">
+                    <div class="sit">30</div>
+                    <div class="sit">33</div>
+                    <div class="way"></div>
+                    <div class="sit">31</div>
+                    <div class="sit">29</div>
+                </div>
+                <div class="row">
+                    <div class="sit">26</div>
+                    <div class="sit">28</div>
+                    <div class="way"></div>
+                    <div class="sit">27</div>
+                    <div class="sit">25</div>
+                </div>
+                <div class="row">
+                    <div class="sit">22</div>
+                    <div class="sit">24</div>
+                    <div class="way"></div>
+                    <div class="sit">23</div>
+                    <div class="sit">21</div>
+                </div>
+                <div class="row">
+                    <div class="sit">18</div>
+                    <div class="sit">20</div>
+                    <div class="way"></div>
+                    <div class="sit">19</div>
+                    <div class="sit">17</div>
+                </div>
+                <div class="row">
+                    <div class="sit">14</div>
+                    <div class="sit">16</div>
+                    <div class="way"></div>
+                    <div class="sit">15</div>
+                    <div class="sit">13</div>
+                </div>
+                <div class="row">
+                    <div class="sit">10</div>
+                    <div class="sit">12</div>
+                    <div class="way"></div>
+                    <div class="sit">11</div>
+                    <div class="sit">9</div>
+                </div>
+                <div class="row">
+                    <div class="sit">6</div>
+                    <div class="sit">8</div>
+                    <div class="way"></div>
+                    <div class="sit">7</div>
+                    <div class="sit">5</div>
+                </div>
+                <div class="row">
+                    <div class="sit">2</div>
+                    <div class="sit">4</div>
+                    <div class="way"></div>
+                    <div class="sit">3</div>
+                    <div class="sit">1</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="row">
+                <div class="area area-2"><i class="fa-solid fa-building"></i></div>
+                <div class="way"></div>
+                <div class="area area-2-2"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                <div class="area area-4-1"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-toilet"></i></div>
+                <div class="way"></div>
+                <div class="area area-4-2 line-2 baby"><i class="fa-solid fa-person-breastfeeding"></i></div>
+            </div>
+        </div>
+        <div class="carriage">
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit">50</div>
+                    <div class="sit">52</div>
+                    <div class="way"></div>
+                    <div class="sit">51</div>
+                    <div class="sit">49</div>
+                </div>
+                <div class="row">
+                    <div class="sit">46</div>
+                    <div class="sit">48</div>
+                    <div class="way"></div>
+                    <div class="sit">47</div>
+                    <div class="sit">45</div>
+                </div>
+                <div class="row">
+                    <div class="sit">42</div>
+                    <div class="sit">44</div>
+                    <div class="way"></div>
+                    <div class="sit">43</div>
+                    <div class="sit">41</div>
+                </div>
+                <div class="row">
+                    <div class="sit">38</div>
+                    <div class="sit">40</div>
+                    <div class="way"></div>
+                    <div class="sit">39</div>
+                    <div class="sit">37</div>
+                </div>
+                <div class="row">
+                    <div class="sit">34</div>
+                    <div class="sit">36</div>
+                    <div class="way"></div>
+                    <div class="sit">35</div>
+                    <div class="sit">33</div>
+                </div>
+                <div class="row">
+                    <div class="sit">30</div>
+                    <div class="sit">32</div>
+                    <div class="way"></div>
+                    <div class="sit">31</div>
+                    <div class="sit">29</div>
+                </div>
+                <div class="row">
+                    <div class="sit">26</div>
+                    <div class="sit">28</div>
+                    <div class="way"></div>
+                    <div class="sit">27</div>
+                    <div class="sit">25</div>
+                </div>
+                <div class="row">
+                    <div class="sit">22</div>
+                    <div class="sit">24</div>
+                    <div class="way"></div>
+                    <div class="sit">23</div>
+                    <div class="sit">21</div>
+                </div>
+                <div class="row">
+                    <div class="sit">18</div>
+                    <div class="sit">20</div>
+                    <div class="way"></div>
+                    <div class="sit">19</div>
+                    <div class="sit">17</div>
+                </div>
+                <div class="row">
+                    <div class="sit">14</div>
+                    <div class="sit">16</div>
+                    <div class="way"></div>
+                    <div class="sit">15</div>
+                    <div class="sit">13</div>
+                </div>
+                <div class="row">
+                    <div class="sit">10</div>
+                    <div class="sit">12</div>
+                    <div class="way"></div>
+                    <div class="sit">11</div>
+                    <div class="sit">9</div>
+                </div>
+                <div class="row">
+                    <div class="sit">6</div>
+                    <div class="sit">8</div>
+                    <div class="way"></div>
+                    <div class="sit">7</div>
+                    <div class="sit">5</div>
+                </div>
+                <div class="row">
+                    <div class="sit">2</div>
+                    <div class="sit">4</div>
+                    <div class="way"></div>
+                    <div class="sit">3</div>
+                    <div class="sit">1</div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="row">
+                <div class="area area-4-1 line-2"><i class="fa-solid fa-restroom"></i></div>
+                <div class="way"></div>
+                <div class="area area-2-1"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
+            </div>
+        </div>
+        <div class="carriage rear">
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="sits">
+                <div class="row">
+                    <div class="sit">34</div>
+                    <div class="sit">36</div>
+                    <div class="way"></div>
+                    <div class="sit">35</div>
+                    <div class="sit">33</div>
+                </div>
+                <div class="row">
+                    <div class="sit">30</div>
+                    <div class="sit">32</div>
+                    <div class="way"></div>
+                    <div class="sit">31</div>
+                    <div class="sit">29</div>
+                </div>
+                <div class="row">
+                    <div class="sit">26</div>
+                    <div class="sit">28</div>
+                    <div class="way"></div>
+                    <div class="sit">27</div>
+                    <div class="sit">25</div>
+                </div>
+                <div class="row">
+                    <div class="sit">22</div>
+                    <div class="sit">24</div>
+                    <div class="way"></div>
+                    <div class="sit">23</div>
+                    <div class="sit">21</div>
+                </div>
+                <div class="row">
+                    <div class="sit">18</div>
+                    <div class="sit">20</div>
+                    <div class="way"></div>
+                    <div class="sit">19</div>
+                    <div class="sit">17</div>
+                </div>
+                <div class="row">
+                    <div class="sit">14</div>
+                    <div class="sit">16</div>
+                    <div class="way"></div>
+                    <div class="sit">15</div>
+                    <div class="sit">13</div>
+                </div>
+                <div class="row">
+                    <div class="sit">10</div>
+                    <div class="sit">12</div>
+                    <div class="way"></div>
+                    <div class="sit">11</div>
+                    <div class="sit">9</div>
+                </div>
+                <div class="row">
+                    <div class="sit">6</div>
+                    <div class="sit">8</div>
+                    <div class="way"></div>
+                    <div class="sit">7</div>
+                    <div class="sit">5</div>
+                </div>
+                <div class="row">
+                    <div class="sit wheel">2</div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div class="sit wheel">1</div>
+                </div>
+                <div class="row">
+                    <div class="line-1">　</div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="row">
+                    <div class="sit"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                    <div></div>
+                    <div class="way"></div>
+                    <div></div>
+                    <div class="sit wheel"><i class="fa-solid fa-wheelchair"></i></div>
+                </div>
+            </div>
+            <div class="door-area">
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
+                <div class="way"></div>
+                <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            </div>
+            <div class="row">
+                <div></div>
+                <div></div>
+                <div class="way"></div>
+                <div class="area area-3 line-2"><i class="fa-solid fa-restroom"></i> <i class="fa-solid fa-baby"></i> <i class="fa-solid fa-wheelchair"></i></div>
+                <div class="area area-3"><i class="pilot"></i></div>
+            </div>
+            <div class="driver-area"><i class="pilot"></i></div>
+        </div>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+const sits = document.querySelectorAll(".sit");
+sits.forEach((sit) => {
+  sit.addEventListener("click", function() {
+    this.classList.toggle("enabled");
+  });
+});
+
+const puyuma = document.getElementById('py');
+puyuma.addEventListener("click", function() {
+    document.querySelector(".emu").hidden = true;
+    document.querySelector(".pum").hidden = false;
+});
+
+const emuth = document.getElementById('th');
+emuth.addEventListener("click", function() {
+    document.querySelector(".emu").hidden = false;
+    document.querySelector(".pum").hidden = true;
+});
 </script>
 </body>
 </html>
