@@ -6,6 +6,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #fffff2;
@@ -143,6 +146,7 @@ body {
     border-radius: .3rem;
     line-height: 2.5rem;
     cursor: pointer;
+    transition: all 0.15s ease-out;
 }
 .sit.wheel {
     color: white;
@@ -155,6 +159,9 @@ body {
 }
 .sit.group{
     background-color: aliceblue;
+}
+.sit.group.enabled{
+    background-color: orange;
 }
 .way{
     width: 2.5rem;
@@ -249,15 +256,73 @@ body {
     bottom:2rem;
     z-index: 10;
 }
+.anchor {
+    position: fixed;
+    right: 1em;
+    top: calc(50vh - 150px);
+}
+.anchor ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+    vertical-align: top;
+}
+.anchor li a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #444444;
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 3px;
+    border-radius: 10px;
+    font-size: 11px;
+    padding-top: 3px;
+    transition: all 0.2s ease-out;
+}
+.anchor li a.active {
+    background-color: orange;
+}
 </style>
 <body>
 <div class="container">
     <div class="arrow south"><i class="fa-solid fa-arrow-up"></i><br>South</div>
     <div class="arrow north">North<br><i class="fa-solid fa-arrow-down"></i></div>
+    <div class="anchor" id="nav">
+        <ul>
+            <li><a href="#one">1</a></li>
+            <li><a href="#two">2</a></li>
+            <li><a href="#three">3</a></li>
+            <li><a href="#four">4</a></li>
+            <li><a href="#five">5</a></li>
+            <li><a href="#six">6</a></li>
+            <li><a href="#seven">7</a></li>
+            <li><a href="#eight">8</a></li>
+            <li><a href="#nine">9</a></li>
+            <li><a href="#ten">10</a></li>
+            <li><a href="#eleven">11</a></li>
+            <li><a href="#twelve">12</a></li>
+        </ul>
+    </div>
+    <div class="anchor" id="nav_puy" hidden>
+        <ul>
+            <li><a href="#p1">1</a></li>
+            <li><a href="#p2">2</a></li>
+            <li><a href="#p3">3</a></li>
+            <li><a href="#p4">4</a></li>
+            <li><a href="#p5">5</a></li>
+            <li><a href="#p6">6</a></li>
+            <li><a href="#p7">7</a></li>
+            <li><a href="#p8">8</a></li>
+        </ul>
+    </div>
     <h1 style="text-align: center;"><i class="fa-solid fa-train"></i></h1>
     <div style="text-align: center;"><button id="th" class="btn">3000</button><button id="py" class="btn">Puyuma</button></div>
     <div class="emu">
-        <div class="carriage front one">
+        <div class="carriage front one" id="one">
             <div class="driver-area"><i class="pilot"></i></div>
             <div class="door-area">
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
@@ -355,7 +420,7 @@ body {
                 <div class="area area-4"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
             </div>
         </div>
-        <div class="carriage two">
+        <div class="carriage two" id="two">
             <div class="row">
                 <div class="area area-4-1"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
                 <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
@@ -473,7 +538,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage three">
+        <div class="carriage three" id="three">
             <div class="row">
                 <div class="area area-2"><i class="fa-solid fa-trash"></i></div>
                 <div class="way"></div>
@@ -583,7 +648,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage four">
+        <div class="carriage four" id="four">
             <div class="row">
                 <div class="area area-4-1"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
                 <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
@@ -701,7 +766,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage five">
+        <div class="carriage five" id="five">
             <div class="row">
                 <div class="area area-4-1"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
                 <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
@@ -819,7 +884,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage six">
+        <div class="carriage six" id="six">
             <div class="row">
                 <div class="area area-4-1"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
                 <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
@@ -911,7 +976,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage seven">
+        <div class="carriage seven" id="seven">
             <div class="row">
                 <div class="area area-2"><i class="fa-solid fa-trash"></i></div>
                 <div class="way"></div>
@@ -1003,7 +1068,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage eight">
+        <div class="carriage eight" id="eight">
             <div class="row">
                 <div class="area area-4-1"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
                 <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
@@ -1121,7 +1186,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage nine">
+        <div class="carriage nine" id="nine">
             <div class="door-area">
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
                 <div class="way"></div>
@@ -1237,7 +1302,7 @@ body {
                 <div class="area area-2-2"><i class="fa-solid fa-person"></i></div>
             </div>
         </div>
-        <div class="carriage ten">
+        <div class="carriage ten" id="ten">
             <div class="door-area">
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
                 <div class="way"></div>
@@ -1353,7 +1418,7 @@ body {
                 <div class="area area-2-2"><i class="fa-solid fa-person"></i></div>
             </div>
         </div>
-        <div class="carriage eleven">
+        <div class="carriage eleven" id="eleven">
             <div class="door-area">
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
                 <div class="way"></div>
@@ -1469,7 +1534,7 @@ body {
                 <div class="area area-2-2"><i class="fa-solid fa-person"></i></div>
             </div>
         </div>
-        <div class="carriage rear twelve">
+        <div class="carriage rear twelve" id="twelve">
             <div class="row">
                 <div class="area area-4-1"><i class="fa-solid fa-restroom"></i><br><i class="fa-solid fa-baby"></i></div>
                 <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
@@ -1569,7 +1634,7 @@ body {
         </div>
     </div>
     <div class="pum" hidden>
-        <div class="carriage front one">
+        <div class="carriage front one" id="p1">
             <div class="driver-area"><i class="pilot"></i></div>
             <div class="row">
                 <div></div>
@@ -1668,7 +1733,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage two">
+        <div class="carriage two" id="p2">
             <div class="row">
                 <div class="area area-2-2"><i class="fa-solid fa-person"></i></div>
                 <div class="way"></div>
@@ -1779,7 +1844,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage three">
+        <div class="carriage three" id="p3">
             <div class="row">
                 <div class="area area-4-1 line-2 baby"><i class="fa-solid fa-person-breastfeeding"></i></div>
                 <div class="way"></div>
@@ -1885,7 +1950,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage four">
+        <div class="carriage four" id="p4">
             <div class="row">
                 <div class="area area-2-2"><i class="fa-solid fa-person"></i></div>
                 <div class="way"></div>
@@ -1996,7 +2061,7 @@ body {
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
             </div>
         </div>
-        <div class="carriage five">
+        <div class="carriage five" id="p5">
             <div class="door-area">
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
                 <div class="way"></div>
@@ -2107,7 +2172,7 @@ body {
                 <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
             </div>
         </div>
-        <div class="carriage six">
+        <div class="carriage six" id="p6">
             <div class="door-area">
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
                 <div class="way"></div>
@@ -2213,7 +2278,7 @@ body {
                 <div class="area area-4-2 line-2 baby"><i class="fa-solid fa-person-breastfeeding"></i></div>
             </div>
         </div>
-        <div class="carriage seven">
+        <div class="carriage seven" id="p7">
             <div class="door-area">
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
                 <div class="way"></div>
@@ -2324,7 +2389,7 @@ body {
                 <div class="area area-2-1"><i class="fa-solid fa-person"></i></div>
             </div>
         </div>
-        <div class="carriage rear eight">
+        <div class="carriage rear eight" id="p8">
             <div class="door-area">
                 <div class="door"><i class="fa-solid fa-person-walking-arrow-right fa-flip-horizontal"></i></div>
                 <div class="way"></div>
@@ -2435,14 +2500,49 @@ sits.forEach((sit) => {
 
 const puyuma = document.getElementById('py');
 puyuma.addEventListener("click", function() {
-    document.querySelector(".emu").hidden = true;
-    document.querySelector(".pum").hidden = false;
+  document.querySelector(".emu").hidden = true;
+  document.querySelector(".pum").hidden = false;
+  document.querySelector("#nav").hidden = true;
+  document.querySelector("#nav_puy").hidden = false;
 });
 
 const emuth = document.getElementById('th');
 emuth.addEventListener("click", function() {
-    document.querySelector(".emu").hidden = false;
-    document.querySelector(".pum").hidden = true;
+  document.querySelector(".emu").hidden = false;
+  document.querySelector(".pum").hidden = true;
+  document.querySelector("#nav").hidden = false;
+  document.querySelector("#nav_puy").hidden = true;
+});
+
+document.addEventListener("scroll", function() {
+  const sections = document.querySelectorAll(".carriage");
+  const navLinks = document.querySelectorAll("#nav a");
+  const navLinks2 = document.querySelectorAll("#nav_puy a");
+  let current = "";
+
+  for (const section of sections) {
+    const sectionTop = section.offsetTop - 50;
+    const sectionHeight = section.offsetHeight;
+
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      current = section.id;
+      break;
+    }
+  }
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+  
+  navLinks2.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
 });
 </script>
 </body>
